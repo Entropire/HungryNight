@@ -10,14 +10,6 @@ public class Attacking : MonoBehaviour
     private float AttackingCooldownTime = 0;
     private float AttackingHitWindowTime = 0;
 
-    private void Start()
-    {
-        AttackingOnCooldown += ResetTimer;
-        AttackingOnCooldown += HitCooldown;
-    }
-
-
-
     public static void SetAttackCooldown(float NewCooldown)
     {
         if (AttackCooldown < AttackHitWindow)
@@ -44,17 +36,17 @@ public class Attacking : MonoBehaviour
 
     void Update()
     {
-        if (AttackingCooldownTime < AttackCooldown) Timers();
-
-        if (Input.GetMouseButtonDown(0))
+        if (StateMachine.PlayerState.AttackingOnCooldown) Timers(); Checks();
+        if (!StateMachine.PlayerState.AttackingOnCooldown && Input.GetMouseButtonDown(0))
         {
-            Checks();
+            Count();
         }
     }
 
     void Checks()
     {
-        AttackingOnCooldown?.Invoke(AttackingCooldownTime >= AttackCooldown);
+        AttackingOnCooldown?.Invoke(AttackingCooldownTime <= AttackCooldown);
+        AttackingHitWindowCheck();
     }
 
     private void Timers()
@@ -63,9 +55,9 @@ public class Attacking : MonoBehaviour
         AttackingCooldownTime += Time.deltaTime;
     }
 
-    void HitCooldown(bool CanAttack)
+    void AttackingHitWindowCheck()
     {
-        if (CanAttack)
+        if (AttackingHitWindowTime >= AttackHitWindow)
         {
             IsAttacking?.Invoke(true);
         }
@@ -73,15 +65,11 @@ public class Attacking : MonoBehaviour
         {
             IsAttacking?.Invoke(false);
         }
-        
     }
 
-    private void ResetTimer(bool Reset)
+    private void Count()
     {
-        if (Reset)
-        {
-            AttackingCooldownTime = 0;
-            AttackingHitWindowTime = 0;
-        }
+        AttackingCooldownTime = 0;
+        AttackingHitWindowTime = 0;
     }
 }
