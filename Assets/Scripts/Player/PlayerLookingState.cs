@@ -9,8 +9,8 @@ namespace StateMachine
 
         static PlayerState()
         {
-            Attacking.IsAttacking += AttackingCheck;
-            Attacking.AttackingOnCooldown += AttackingCooldownCheck;
+            HitTimers.IsAttacking += AttackingCheck;
+            HitTimers.AttackingOnCooldown += AttackingCooldownCheck;
         }
 
         private static void AttackingCheck(bool Attacking)
