@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spike : MonoBehaviour
+public class SpikeFall : MonoBehaviour
 {
     [SerializeField] LayerMask layermaskPlayer; 
     [SerializeField] LayerMask layermaskGround;
-
     bool playerTrigger;
-    bool groundTrigger;
+    bool isAirborn;
+    float speed;
+
 
     void Start()
     {
@@ -25,15 +26,20 @@ public class Spike : MonoBehaviour
         );
 
         // playerTrigger = Physics2D.BoxCast(pos, new Vector2(1, transform.localScale.y), 0, Vector2.down, 3, layermaskPlayer);
-        if (Physics2D.BoxCast(pos, new Vector2(1, transform.localScale.y), 0, Vector2.down, 3, layermaskPlayer))
+        if (Physics2D.BoxCast(pos, new Vector2(1, transform.localScale.y), 0, Vector2.down, 5, layermaskPlayer) && !playerTrigger)
         {
             playerTrigger = true;
         }
     	if (playerTrigger)
         {
-            if (!Physics2D.Raycast(transform.position, Vector2.down, 0.5f, layermaskGround))
+            if (Physics2D.Raycast(transform.position, Vector2.down, 0.3f, layermaskGround))
             {
-                transform.position += new Vector3(0, -3, 0) * Time.deltaTime;
+                isAirborn = false;
+            }else
+            {
+                isAirborn = true;
+                transform.position += new Vector3(0, -30, 0) * speed * Time.deltaTime;
+                speed += 0.008f;
             }
         }
     }
