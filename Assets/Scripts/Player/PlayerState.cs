@@ -19,9 +19,6 @@ namespace StateMachine
         public bool IsHit;
         public bool IsAttacking = false, AttackingOnCooldown = false;
 
-        void Attacked()
-        {
 
-        }
     }
 }
