@@ -1,39 +1,21 @@
+using Unity.VisualScripting;
+using UnityEngine;
+
 namespace StateMachine
 {
-    public static class PlayerState
+    public class PlayerState : MonoBehaviour
     {
-        public static bool Up, Down, Left, Right;
-        public static bool IsJumping, IsFalling;
-        public static bool TookDamage;
-        public static bool IsAttacking = false, AttackingOnCooldown = false;
+        public static PlayerState instance;
 
-        static PlayerState()
+        void Start()
         {
-            HitTimers.IsAttacking += AttackingCheck;
-            HitTimers.AttackingOnCooldown += AttackingCooldownCheck;
+            if (instance == null)
+                instance = this;
         }
 
-        private static void AttackingCheck(bool Attacking)
-        {
-            if (Attacking)
-            {
-                IsAttacking = true;
-            } else
-            {
-                IsAttacking = false;
-            }
-        }
-
-        private static void AttackingCooldownCheck(bool OnCooldown)
-        {
-            if (!OnCooldown)
-            {
-                AttackingOnCooldown = false;
-            }
-            else
-            {
-                AttackingOnCooldown = true;
-            }
-        }
+        public Vector2 LookingDiraction = new Vector2(0, 0);
+        public bool IsJumping, IsFalling;
+        public bool IsHit;
+        public bool IsAttacking = false, AttackingOnCooldown = false;
     }
 }
