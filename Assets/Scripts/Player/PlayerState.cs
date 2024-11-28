@@ -5,6 +5,7 @@ namespace StateMachine
 {
     public class PlayerState : MonoBehaviour
     {
+        [SerializeField] float AttackCooldown, AttackTimer;
         public static PlayerState instance;
 
         void Start()
@@ -17,5 +18,7 @@ namespace StateMachine
         public bool IsJumping, IsFalling;
         public bool IsHit;
         public bool IsAttacking = false, AttackingOnCooldown = false;
+
+
     }
 }
