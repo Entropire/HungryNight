@@ -17,8 +17,7 @@ namespace StateMachine
         public Vector2 LookingDiraction = new Vector2(0, 0);
         public bool IsJumping, IsFalling;
         public bool IsHit;
+        public bool IsWalking;
         public bool IsAttacking = false, AttackingOnCooldown = false;
-
-
     }
 }
