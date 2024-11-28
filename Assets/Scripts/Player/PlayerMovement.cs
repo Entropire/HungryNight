@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!TryGetComponent(out Rb))
         {
-            Debug.LogError("Rigidbody2D not found on PlayerMovement!");
+            Debug.LogError($"Rigidbody2D not found on {gameObject.name}!");
         }
     }
 
