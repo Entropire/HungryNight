@@ -41,15 +41,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W) && IsGrounded())
         {
-            PlayerState.IsJumping = true;
+            PlayerState.instance.IsJumping = true;
             initialY = transform.position.y; 
         }
 
-        if (Input.GetKey(KeyCode.W) && PlayerState.IsJumping)
+        if (Input.GetKey(KeyCode.W) && PlayerState.instance.IsJumping)
         {
             if (transform.position.y - initialY >= MaxJumpHeight)
             {
-                PlayerState.IsJumping = false;
+                PlayerState.instance.IsJumping = false;
                 return;
             }
             
@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
         
         if (Input.GetKeyUp(KeyCode.Space) || Rb.velocity.y <= 0)
         {
-            PlayerState.IsJumping  = false;
+            PlayerState.instance.IsJumping  = false;
         }
     }
 

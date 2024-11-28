@@ -15,7 +15,28 @@ namespace StateMachine
 
         private void Update()
         {
-            
+            ResetTriggers();
+
+            if (PlayerState.instance.IsJumping)
+            {
+                animator.SetTrigger("IsJumping");
+            }
+            if (PlayerState.instance.IsFalling)
+            {
+                animator.SetTrigger("IsFalling");
+            }
+            if (PlayerState.instance.IsHit)
+            {
+                animator.SetTrigger("IsHit");
+            }
+        }
+
+        private void ResetTriggers()
+        {
+            animator.ResetTrigger("IsJumping");
+            animator.ResetTrigger("IsFalling");
+            animator.ResetTrigger("IsWalking");
+            animator.ResetTrigger("IsHit");
         }
     }
 }
