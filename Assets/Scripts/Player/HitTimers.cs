@@ -36,11 +36,11 @@ public class HitTimers : MonoBehaviour
 
     void Update()
     {
-        if (StateMachine.PlayerState.AttackingOnCooldown) Timers(); Checks();
+/*        if (StateMachine.PlayerState.AttackingOnCooldown) Timers(); Checks();
         if (!StateMachine.PlayerState.AttackingOnCooldown && Input.GetMouseButtonDown(0))
         {
             Count();
-        }
+        }*/
     }
 
     void Checks()
