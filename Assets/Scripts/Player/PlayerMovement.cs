@@ -1,6 +1,8 @@
 using StateMachine;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D Rb;
@@ -13,19 +15,17 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] private Transform GroundCheck;
     [SerializeField] private float GroundCheckRadius;
+    private bool isGrounded;
+    private Vector3 LastGroundedLocation;
 
     void Start()
     {
-        if (!TryGetComponent(out Rb))
-        {
-            Debug.LogError($"Rigidbody2D not found on {gameObject.name}!");
-        }
+        Rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
-        if (!Rb) return;
-
+        IsGrounded();
         Movement();
         Jump();
     }
@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKey(KeyCode.W) && IsGrounded())
+        if (Input.GetKey(KeyCode.W) && isGrounded)
         {
             PlayerState.instance.IsJumping = true;
             initialY = transform.position.y; 
@@ -67,9 +67,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private bool IsGrounded()
+    private void IsGrounded()
     {
-        return Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, LayerMask.GetMask("Ground"));
+        isGrounded = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, LayerMask.GetMask("Ground"));
+
+        if (isGrounded)
+        {
+            LastGroundedLocation = transform.position;
+        }
     }
 }   
 
