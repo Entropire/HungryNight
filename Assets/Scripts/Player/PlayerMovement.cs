@@ -16,8 +16,8 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] private Transform GroundCheck;
     [SerializeField] private float GroundCheckRadius;
-    private bool isGrounded;
-    private Vector3 LastGroundedLocation;
+    public bool isGrounded;
+    public Vector3 LastGroundedLocation;
 
     void Start()
     {

@@ -12,10 +12,12 @@ public class HitPushback : MonoBehaviour
     private bool ishitCooldown;
     private int YhitCords = 4;
     public static event Action Gethit;
+    private bool isntFallSpike;
     public Image Blackfade;
+    private PlayerMovement playMovement;
+    [SerializeField] private Vector3 LastPos;
     [SerializeField] private LayerMask Spiketrap;
     [SerializeField] private Color BaseColor;
-    [SerializeField] private Color CurrentColor;
     [SerializeField] private Color ToColor;
     [SerializeField] private float Hittime = 0.03f;
     [SerializeField] private float timeelepsed;
@@ -25,6 +27,7 @@ public class HitPushback : MonoBehaviour
         Blackfade.color = BaseColor;
         ToColor = BaseColor;
         rb = GetComponent<Rigidbody2D>();
+        playMovement = GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame, 
@@ -37,6 +40,13 @@ public class HitPushback : MonoBehaviour
             {
                 Time.timeScale = 1;
             }
+            if (timeelepsed > 0.5f)
+            {
+                if (isntFallSpike)
+                {
+                    transform.position = LastPos;
+                }
+            }
             if (timeelepsed > hitCooldowntime)
             {
                 ishitCooldown = false;
@@ -44,9 +54,10 @@ public class HitPushback : MonoBehaviour
             }
             
         }   
-        if (Physics2D.CircleCast(transform.position, 2, Vector2.zero, 8f, Spiketrap))
+        if (!Physics2D.CircleCast(transform.position, 4, Vector2.zero, 8f, Spiketrap) && playMovement.isGrounded)
         {
-            Debug.Log("Ghello");
+            LastPos = playMovement.LastGroundedLocation;
+            Debug.Log("hllo");
         }
         Blackfade.color = Color.Lerp(Blackfade.color, ToColor, 1f * Time.fixedDeltaTime);
         if (Blackfade.color == Color.black)
@@ -68,10 +79,12 @@ public class HitPushback : MonoBehaviour
                 {
                     YhitCords = 16;
                     ToColor = Color.black;
+                    isntFallSpike = true;
                 }else
                 {
                     YhitCords = 7;
                     ToColor = BaseColor;
+                    isntFallSpike = false;
                 }
 
                 Gethit?.Invoke();

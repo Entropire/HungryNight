@@ -7,7 +7,7 @@ public class SpikeFall : MonoBehaviour
     [SerializeField] LayerMask layermaskPlayer; 
     [SerializeField] LayerMask layermaskGround;
     bool playerTrigger;
-    bool isAirborn;
+    public bool isAirborn;
     float speed;
 
 
@@ -41,6 +41,14 @@ public class SpikeFall : MonoBehaviour
                 transform.position += new Vector3(0, -20, 0) * speed * Time.deltaTime;
                 speed += 0.004f;
             }
+        }
+        if (!isAirborn)
+        {
+            gameObject.tag = "Destroyable";
+        }
+        else
+        {
+            gameObject.tag = "Spike";
         }
     }
 }
