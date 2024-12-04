@@ -1,6 +1,8 @@
 using StateMachine;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D Rb;
@@ -18,16 +20,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        if (!TryGetComponent(out Rb))
-        {
-            Debug.LogError($"Rigidbody2D not found on {gameObject.name}!");
-        }
+        Rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
-        if (!Rb) return;
-
         IsGrounded();
         Movement();
         Jump();
