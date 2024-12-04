@@ -54,7 +54,7 @@ namespace StateMachine
         #endregion
 
         public Vector2 LookingDirection { get; private set; } = new Vector2(1, 0);
-        public bool IsJumping, IsFalling;
+        public bool IsJumping, IsFalling, IsWalking;
         public bool IsHit;
         public bool IsAttacking = false, AttackingOnCooldown = false;
 

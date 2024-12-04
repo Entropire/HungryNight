@@ -3,17 +3,18 @@ using StateMachine;
 
 public class Attacking : PlayerState
 {
-    Transform AttackBox;
+    Collider2D AttackBox;
     void Start()
     {
-        AttackBox = GameObject.Find("AttackBox").transform;
+        AttackBox = GameObject.Find("AttackBox").GetComponent<Collider2D>();
     }
 
     void Update()
     {
         if (instance.IsAttacking)
         {
-            AttackBox.localPosition = instance.LookingDirection;
+            AttackBox.transform.localPosition = instance.LookingDirection;
+            
         }
     }
 }
