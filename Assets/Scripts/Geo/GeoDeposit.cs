@@ -7,14 +7,15 @@ public class GeoDeposit : MonoBehaviour
 {
     int totalAmount = 20;
     int health = 4;
-
-
+    private Animator Geo;
+    [SerializeField] Transform childTransform;
     [SerializeField] List<GameObject> depositList;
     [SerializeField] List<Vector2> directionList;
     [SerializeField] GameObject food;
 
     private void Start()
     {
+        Geo = childTransform.GetComponent<Animator>();
         directionList.Add(Vector2.up);
         directionList.Add(Vector2.left);
         directionList.Add(Vector2.right);
@@ -48,7 +49,8 @@ public class GeoDeposit : MonoBehaviour
 
         if (totalAmount == currentamount)
         {
-           Destroy(this.gameObject);
+            Geo.Play("GeoStone");
+            Destroy(this);
         }
     }
 }
