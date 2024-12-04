@@ -32,15 +32,16 @@ public class SpikeFall : MonoBehaviour
         }
     	if (playerTrigger)
         {
-            if (Physics2D.Raycast(transform.position, Vector2.down, 0.3f, layermaskGround))
+            if (Physics2D.Raycast(transform.position, Vector2.down, 0.1f, layermaskGround))
             {
                 isAirborn = false;
             }else
             {
                 isAirborn = true;
-                transform.position += new Vector3(0, -30, 0) * speed * Time.deltaTime;
-                speed += 0.008f;
+                transform.position += new Vector3(0, -20, 0) * speed * Time.deltaTime;
+                speed += 0.004f;
             }
         }
     }
 }
+    

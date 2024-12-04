@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 20015766}
   - component: {fileID: 20015769}
   - component: {fileID: 20015770}
+  - component: {fileID: 20015771}
   m_Layer: 6
   m_Name: Circle
   m_TagString: Player
@@ -202,8 +203,8 @@ Transform:
   m_GameObject: {fileID: 20015765}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.47, y: -3.4165, z: 0}
-  m_LocalScale: {x: 1, y: 1.4584788, z: 1}
+  m_LocalPosition: {x: -5.43, y: -3.24, z: 0}
+  m_LocalScale: {x: 1.0327, y: 1.4584788, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -269,7 +270,19 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &20015771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20015765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c77e8682c62935249b34945cc7ad0a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &910048284
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,7 +390,7 @@ GameObject:
   - component: {fileID: 1237183817}
   m_Layer: 0
   m_Name: Triangle
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
