@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] private Transform GroundCheck;
     [SerializeField] private float GroundCheckRadius;
+    private bool isGrounded;
+    private Vector3 LastGroundedLocation;
 
     void Start()
     {
@@ -26,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!Rb) return;
 
+        IsGrounded();
         Movement();
         Jump();
     }
@@ -44,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKey(KeyCode.W) && IsGrounded())
+        if (Input.GetKey(KeyCode.W) && isGrounded)
         {
             PlayerState.instance.IsJumping = true;
             initialY = transform.position.y; 
@@ -67,9 +70,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private bool IsGrounded()
+    private void IsGrounded()
     {
-        return Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, LayerMask.GetMask("Ground"));
+        isGrounded = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, LayerMask.GetMask("Ground"));
+
+        if (isGrounded)
+        {
+            LastGroundedLocation = transform.position;
+        }
     }
 }   
 
