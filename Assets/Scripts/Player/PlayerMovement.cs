@@ -35,6 +35,11 @@ public class PlayerMovement : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
 
         Rb.velocity = new Vector2(moveX * MaxSpeed, Rb.velocity.y);
+
+        if (moveX is <= -0.1f or >= 0.1f)
+            PlayerState.instance.IsWalking = true;
+        else
+            PlayerState.instance.IsWalking = false;
     }
 
     private void Jump()
