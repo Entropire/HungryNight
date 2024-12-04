@@ -3,6 +3,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(PlayerState))]
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D Rb;
