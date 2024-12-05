@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Scripts/Player/InputMaganger.cs.meta
-guid: defbefefe9076cf45a73de748c55410b
-========
-guid: 161a9e3c19aa6f84cacbe7cbebf0d696
->>>>>>>> Development:Assets/AttackCheckCollider.cs.meta
+guid: 7b954bd7439509240b7656afdb540634
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
