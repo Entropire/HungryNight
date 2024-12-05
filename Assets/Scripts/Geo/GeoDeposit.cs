@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
 
 public class GeoDeposit : MonoBehaviour
 {
@@ -41,7 +42,6 @@ public class GeoDeposit : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             GameObject geo = Instantiate(food, transform.position, Quaternion.identity);
-            geo.AddComponent<GeoDrop>();
             //geo.transform.position = directionList[Random.Range(1,3)];
             depositList.Add(geo);
             yield return new WaitForSeconds(0.01f);
@@ -55,14 +55,6 @@ public class GeoDeposit : MonoBehaviour
     }
 }
 
-public class GeoDrop : MonoBehaviour
-{
-    Rigidbody2D body;
 
-    private void Start()
-    {
-        body = GetComponent<Rigidbody2D>();
-        Vector2 Push = new Vector2(Random.Range(-200, 200), Random.Range(0, 600));
-        body.AddForce(Push);
-    }
-}
+
+
