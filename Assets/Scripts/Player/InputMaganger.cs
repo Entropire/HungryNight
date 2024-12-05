@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Utilities;
 
 public class InputMaganger : MonoBehaviour
 {
@@ -23,14 +24,10 @@ public class InputMaganger : MonoBehaviour
 
     void Update()
     {
-        if (Move.WasPerformedThisFrame())
-        {
-            MoveDirection?.Invoke(Move.ReadValue<Vector2>());
-        }
-        if (Look.WasPerformedThisFrame())
-        {
-            LookingDirection?.Invoke(Look.ReadValue<Vector2>());
-        }
+        MoveDirection?.Invoke(Move.IsPressed() ? Move.ReadValue<Vector2>() : Vector2.zero);
+
+        LookingDirection?.Invoke(Look.IsPressed() ? Look.ReadValue<Vector2>() : Vector2.zero);
+
         if (Jump.WasPerformedThisFrame())
         {
             Jumping?.Invoke();
@@ -39,5 +36,9 @@ public class InputMaganger : MonoBehaviour
         {
             Mepping?.Invoke();
         }
+
+        var trace = new InputActionTrace();
+
+        trace.UnsubscribeFromAll();
     }
 }

@@ -48,7 +48,8 @@ namespace StateMachine
         {
             if (instance == null)
                 instance = this;
-            PlayerAttackingInput.Attacked += Attacked;
+
+            InputMaganger.Mepping += Attacked;
         }
 
         #endregion
