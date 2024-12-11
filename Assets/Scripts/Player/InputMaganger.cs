@@ -2,42 +2,30 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputMaganger : MonoBehaviour
+public class InputMaganger : MonoBehaviour, InputSystem.IPlayerActions
 {
-    public static event Action<Vector2> MoveDirection;
-    public static event Action<Vector2> LookingDirection;
-    public static event Action Mepping;
-    public static event Action Jumping;
-    private InputAction Move;
-    private InputAction Look;
-    private InputAction Attack;
-    private InputAction Jump;
-
-    void Start()
+    public void OnMove(InputAction.CallbackContext context)
     {
-        Move = InputSystem.actions.FindAction("Move");
-        Look = InputSystem.actions.FindAction("Look");
-        Attack = InputSystem.actions.FindAction("Attack");
-        Jump = InputSystem.actions.FindAction("Jump");
+        Debug.Log("is moving");
     }
 
-    void Update()
+    public void OnLook(InputAction.CallbackContext context)
     {
-        if (Move.WasPerformedThisFrame())
-        {
-            MoveDirection?.Invoke(Move.ReadValue<Vector2>());
-        }
-        if (Look.WasPerformedThisFrame())
-        {
-            LookingDirection?.Invoke(Look.ReadValue<Vector2>());
-        }
-        if (Jump.WasPerformedThisFrame())
-        {
-            Jumping?.Invoke();
-        } 
-        if (Attack.WasPerformedThisFrame())
-        {
-            Mepping?.Invoke();
-        }
+        Debug.Log("is looking");
+    }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        Debug.Log("is attacking");
+    }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        Debug.Log("is interacting");
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        Debug.Log("is jumping");
     }
 }
