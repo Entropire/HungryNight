@@ -12,7 +12,7 @@ public class GeoDeposit : MonoBehaviour
     [SerializeField] Transform childTransform;
     [SerializeField] List<GameObject> depositList;
     [SerializeField] List<Vector2> directionList;
-    [SerializeField] GameObject food;
+    [SerializeField] GameObject[] food;
 
     private void Start()
     {
@@ -41,7 +41,7 @@ public class GeoDeposit : MonoBehaviour
         Debug.Log(currentamount);
         for (int i = 0; i < amount; i++)
         {
-            GameObject geo = Instantiate(food, transform.position, Quaternion.identity);
+            GameObject geo = Instantiate(food[Random.Range(0, 3)], transform.position, Quaternion.identity);
             //geo.transform.position = directionList[Random.Range(1,3)];
             depositList.Add(geo);
             yield return new WaitForSeconds(0.01f);

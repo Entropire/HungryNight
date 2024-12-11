@@ -7,72 +7,71 @@ public class GeoUi : MonoBehaviour
     [SerializeField] TMP_Text GeoAmount;
     [SerializeField] TMP_Text GeoAdded;
 
-    [SerializeField] private float countdownTimer = 0f;
-    [SerializeField] private float geoPickupTime =  2f;
-    [SerializeField] private float updateInterval = 0.05f;
+    [SerializeField] private float CountdownTimer = 0f;
+    [SerializeField] private float GeoPickupTime = 2f; // 1 second for the total addition
+    [SerializeField] private float UpdateInterval = 0.1f;
 
-    private int totalAmount = 0; 
-    private int addedAmount = 0; 
+    private int TotalAmount = 0;
+    private int AddedAmount = 0;
 
-    private float nextUpdateTime = 0f; 
+    private float NextUpdateTime = 0f;
+    private float TimeToAddGeo = 0f; // Tracks how much time is left to add the current added amount
 
     public UnityEvent OnGeoUpdateComplete;
 
     private void Start()
     {
-        if (OnGeoUpdateComplete == null) 
-        { 
-            OnGeoUpdateComplete = new UnityEvent(); 
+        if (OnGeoUpdateComplete == null)
+        {
+            OnGeoUpdateComplete = new UnityEvent();
         }
     }
 
     private void Update()
     {
-        if (countdownTimer > 0)
+        if (CountdownTimer > 0)
         {
-            countdownTimer -= Time.deltaTime;
+            CountdownTimer -= Time.deltaTime;
         }
 
-        if (countdownTimer <= 0 && addedAmount > 0)
+        if (CountdownTimer <= 0 && AddedAmount > 0)
         {
-            if (Time.time >= nextUpdateTime)
+            if (TimeToAddGeo > 0)
             {
-                IncrementGeoCount();
-                nextUpdateTime = Time.time + updateInterval;
-            }
+                TimeToAddGeo -= Time.deltaTime; // Decrease time remaining to add all Geo
+                int incrementAmount = Mathf.CeilToInt((float)AddedAmount * Time.deltaTime / GeoPickupTime); // Amount to add this frame
+                TotalAmount += incrementAmount;
+                AddedAmount -= incrementAmount;
 
-            if (addedAmount <= 0)
-            {
-                FinalizeGeoCount();
+                // Update the UI text
+                GeoAmount.text = TotalAmount.ToString();
+                GeoAdded.text = "+" + AddedAmount.ToString();
+
+                // If there's no Geo left to add, finalize the process
+                if (AddedAmount <= 0)
+                {
+                    FinalizeGeoCount();
+                }
             }
         }
     }
 
     public void AddGeo(int amount)
     {
-        addedAmount += amount;
-        GeoAdded.text = addedAmount.ToString();
+        AddedAmount += amount;
+        GeoAdded.text = "+" + AddedAmount.ToString();
 
-        countdownTimer = geoPickupTime;
-     
-        nextUpdateTime = Time.time + updateInterval;
-    }
-
-    private void IncrementGeoCount()
-    { 
-        totalAmount += 1;
-        addedAmount -= 1;
- 
-        GeoAmount.text = totalAmount.ToString();
-        GeoAdded.text = addedAmount.ToString();
+        // Ensure it always takes 1 second to add the total amount
+        TimeToAddGeo = GeoPickupTime;
+        CountdownTimer = GeoPickupTime; 
     }
 
     private void FinalizeGeoCount()
     {
-        addedAmount = 0;
+        // Reset added amount and UI text once the addition is done
+        AddedAmount = 0;
         GeoAdded.text = "0";
 
         OnGeoUpdateComplete.Invoke();
     }
 }
-
