@@ -3,10 +3,18 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
+    public static PlayerInput Instance;
     public static event Action<Vector2> LookingDirection;
     public static event Action IsWalking;
     public static event Action Attack;
 
+    private void Start()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
