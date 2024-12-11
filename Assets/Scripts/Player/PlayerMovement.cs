@@ -1,9 +1,12 @@
 using StateMachine;
 using UnityEngine;
 
+#region RequireComponents
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(PlayerState))]
+[RequireComponent(typeof(InputMaganger))]
+#endregion
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D Rb;
@@ -18,10 +21,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float GroundCheckRadius;
     private bool isGrounded;
     private Vector3 LastGroundedLocation;
+    private Vector2 PlayerInput;
+
 
     void Start()
     {
         Rb = gameObject.GetComponent<Rigidbody2D>();
+
+        InputMaganger.MoveDirection += (diraction) =>
+        {
+            PlayerInput = diraction;
+        };
     }
 
     private void Update()
@@ -33,11 +43,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Movement()
     {
-        float moveX = Input.GetAxisRaw("Horizontal");
+        Rb.velocity = new Vector2(PlayerInput.x * MaxSpeed, Rb.velocity.y);
 
-        Rb.velocity = new Vector2(moveX * MaxSpeed, Rb.velocity.y);
-
-        if (moveX is <= -0.1f or >= 0.1f)
+        if (PlayerInput.x is <= -0.1f or >= 0.1f)
             PlayerState.instance.IsWalking = true;
         else
             PlayerState.instance.IsWalking = false;
@@ -45,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKey(KeyCode.W) && isGrounded)
+        if (PlayerInput.y > 0 && isGrounded)
         {
             PlayerState.instance.IsJumping = true;
             initialY = transform.position.y; 
@@ -62,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
             Rb.velocity = new Vector2(Rb.velocity.x, JumpForce);
         }
         
-        if (Input.GetKeyUp(KeyCode.Space) || Rb.velocity.y <= 0)
+        if (PlayerInput.y > 0 || Rb.velocity.y <= 0)
         {
             PlayerState.instance.IsJumping  = false;
         }
