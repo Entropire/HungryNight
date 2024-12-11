@@ -2,9 +2,7 @@
 
 namespace StateMachine
 {
-    #region RequireComponents
     [RequireComponent(typeof(Animator))]
-    #endregion
     public class PlayerAnimator : MonoBehaviour
     {
         Animator animator;
