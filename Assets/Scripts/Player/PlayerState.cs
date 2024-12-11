@@ -51,7 +51,6 @@ namespace StateMachine
 
             InputMaganger.Mepping += Attacked;
         }
-
         #endregion
 
         public Vector2 LookingDirection { get; private set; } = new Vector2(1, 0);
