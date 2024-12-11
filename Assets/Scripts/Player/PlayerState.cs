@@ -49,7 +49,7 @@ namespace StateMachine
             if (instance == null)
                 instance = this;
 
-            InputMaganger.Mepping += Attacked;
+            //InputMaganger.Mepping += Attacked;
         }
 
         #endregion
