@@ -39,7 +39,8 @@ namespace StateMachine
             if (LookingDirection == Vector2.up || LookingDirection == Vector2.down || LookingDirection == Vector2.left || LookingDirection == Vector2.right)
             {
                 LookingDirection = NewLookingDirection;
-            } else
+            }
+            else
             {
                 Debug.LogError("Invalid looking direction in " + this);
             }
@@ -49,7 +50,7 @@ namespace StateMachine
             if (instance == null)
                 instance = this;
 
-            //InputMaganger.Mepping += Attacked;
+            PlayerInput.Attack += Attacked;
         }
 
         #endregion
