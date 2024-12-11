@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace StateMachine
 {
-    public class PlayerState : MonoBehaviour
+    public class PlayerState : PlayerInput
     {
         #region FieldAndPropertyHandling
 
@@ -49,7 +49,7 @@ namespace StateMachine
             if (instance == null)
                 instance = this;
 
-            PlayerInput.Attack += Attacked;
+            Attack += Attacked;
         }
 
         #endregion
