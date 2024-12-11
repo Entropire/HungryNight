@@ -48,7 +48,10 @@ namespace StateMachine
         {
             if (instance == null)
                 instance = this;
+
+            //InputMaganger.Mepping += Attacked;
         }
+
         #endregion
 
         public Vector2 LookingDirection { get; private set; } = new Vector2(1, 0);
