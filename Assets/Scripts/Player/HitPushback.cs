@@ -13,8 +13,8 @@ public class HitPushback : MonoBehaviour
     private int YhitCords = 4;
     public static event Action Gethit;
     private bool isntFallSpike;
-    public Image Blackfade;
     private PlayerMovement playMovement;
+    [SerializeField] private Image Blackfade;
     [SerializeField] private Vector3 LastPos;
     [SerializeField] private LayerMask Spiketrap;
     [SerializeField] private Color BaseColor;
@@ -40,15 +40,22 @@ public class HitPushback : MonoBehaviour
             {
                 Time.timeScale = 1;
             }
-            if (timeelepsed > 0.5f)
+            if (timeelepsed > 0.7f)
             {
+                
                 if (isntFallSpike)
                 {
                     transform.position = LastPos;
+                    rb.velocity = new Vector3(0, 0, 0);
                 }
+            }
+            if (timeelepsed > 0.7)
+            {
+                playMovement.enabled = true;
             }
             if (timeelepsed > hitCooldowntime)
             {
+                ToColor =  BaseColor;
                 ishitCooldown = false;
                 timeelepsed = 0;
             }
@@ -57,13 +64,8 @@ public class HitPushback : MonoBehaviour
         if (!Physics2D.CircleCast(transform.position, 4, Vector2.zero, 8f, Spiketrap) && playMovement.isGrounded)
         {
             LastPos = playMovement.LastGroundedLocation;
-            Debug.Log("hllo");
         }
         Blackfade.color = Color.Lerp(Blackfade.color, ToColor, 1f * Time.fixedDeltaTime);
-        if (Blackfade.color == Color.black)
-        {
-            ToColor =  BaseColor;
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
@@ -71,10 +73,8 @@ public class HitPushback : MonoBehaviour
         if (other.CompareTag("Spike"))
         {
             Vector2 direction = (transform.position - other.gameObject.transform.position).normalized;
-            // Debug.Log(direction);
             if (!ishitCooldown)
             {
-                Debug.Log(direction.y);
                 if(direction.y > 0 && other.GetComponent<SpikeFall>() == null)
                 {
                     YhitCords = 16;
@@ -100,6 +100,9 @@ public class HitPushback : MonoBehaviour
             Time.timeScale = 0.1f;
             }
             ishitCooldown = true;
+            playMovement.enabled = false;
         }
     }
+
+    
 }

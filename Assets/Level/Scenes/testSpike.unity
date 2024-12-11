@@ -2544,11 +2544,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6983556167752590971, guid: d1b078220615ec740b7ea1496d59c682, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.57
+      value: -4.84
       objectReference: {fileID: 0}
     - target: {fileID: 6983556167752590971, guid: d1b078220615ec740b7ea1496d59c682, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.15
+      value: -2.84
       objectReference: {fileID: 0}
     - target: {fileID: 6983556167752590971, guid: d1b078220615ec740b7ea1496d59c682, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2953,6 +2953,7 @@ MonoBehaviour:
   layermaskGround:
     serializedVersion: 2
     m_Bits: 0
+  isAirborn: 0
 --- !u!60 &1237183818
 PolygonCollider2D:
   m_ObjectHideFlags: 0
