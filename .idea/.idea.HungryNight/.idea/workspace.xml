@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="746741af-1800-4703-84af-6b7a6a876f8c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Scenes/Movement.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Scenes/Movement.unity" afterDir="false" />
+    <list default="true" id="569b8e93-2b69-4c45-92b9-7664e4462739" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HungryNight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HungryNight/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,20 +17,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
-  <component name="ProjectId" id="2pQTrdaHvB4tHyv5r92i3QagVUK" />
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2pkCeC2QrxsFk4dgkweFL6jB9n7" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "PlayerMovement",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -63,10 +65,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="10068">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="10068" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -77,12 +79,14 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="746741af-1800-4703-84af-6b7a6a876f8c" name="Changes" comment="" />
-      <created>1732697503518</created>
+      <changelist id="569b8e93-2b69-4c45-92b9-7664e4462739" name="Changes" comment="" />
+      <created>1733300782876</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1732697503518</updated>
-      <workItem from="1732697505884" duration="1804000" />
+      <updated>1733300782876</updated>
+      <workItem from="1733300785334" duration="475000" />
+      <workItem from="1733912400984" duration="952000" />
+      <workItem from="1733914366446" duration="3752000" />
     </task>
     <servers />
   </component>
@@ -98,37 +102,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs</url>
-          <line>43</line>
-          <properties documentPath="C:\Users\Quinten\Desktop\Projects\c#\HungryNight\Assets\Scripts\Player\PlayerMovement.cs" containingFunctionPresentation="Method 'Jump'">
-            <startOffsets>
-              <option value="968" />
-            </startOffsets>
-            <endOffsets>
-              <option value="969" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs</url>
-          <line>49</line>
-          <properties documentPath="C:\Users\Quinten\Desktop\Projects\c#\HungryNight\Assets\Scripts\Player\PlayerMovement.cs" containingFunctionPresentation="Method 'Jump'">
-            <startOffsets>
-              <option value="1107" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1108" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

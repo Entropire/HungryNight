@@ -3,9 +3,10 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(BoxCollider2D)), RequireComponent(typeof(PlayerState)), RequireComponent(typeof(Rigidbody2D))]
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : PlayerState
 {
     private Rigidbody2D Rb;
+    private PlayerInput input;
     private float initialY;
     
     [SerializeField] private float MaxSpeed;
@@ -24,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         Rb = gameObject.GetComponent<Rigidbody2D>();
+        input = gameObject.GetComponent<PlayerInput>();
     }
 
     private void Update()
@@ -35,17 +37,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Movement()
     {
-
-        float horizontal = Input.GetAxis("Horizontal");
-        Rb.velocity = new Vector2(horizontal * MaxSpeed, Rb.velocity.y);
-
-        if (horizontal is <= -0.1f or >= 0.1f)
+        if (instance.IsWalking)
         {
-            PlayerState.instance.IsWalking = true;
-        }
-        else
-        {
-            PlayerState.instance.IsWalking = false;
+            Rb.velocity = new Vector2(instance.LookingDirection.x * MaxSpeed, Rb.velocity.y);
         }
     }
 
