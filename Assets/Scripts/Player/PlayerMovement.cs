@@ -1,12 +1,12 @@
+using HungryNight.Player;
 using StateMachine;
 using UnityEngine;
 
-
 [RequireComponent(typeof(BoxCollider2D)), RequireComponent(typeof(PlayerState)), RequireComponent(typeof(Rigidbody2D))]
-public class PlayerMovement : PlayerState
+public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D Rb;
-    private PlayerInput input;
+    private PlayerState playerState;
     private float initialY;
     
     [SerializeField] private float MaxSpeed;
@@ -25,7 +25,7 @@ public class PlayerMovement : PlayerState
     void Start()
     {
         Rb = gameObject.GetComponent<Rigidbody2D>();
-        input = gameObject.GetComponent<PlayerInput>();
+        playerState = gameObject.GetComponent<PlayerState>();
     }
 
     private void Update()
@@ -37,9 +37,13 @@ public class PlayerMovement : PlayerState
 
     private void Movement()
     {
-        if (instance.IsWalking)
+        if (playerState.IsWalking)
         {
-            Rb.velocity = new Vector2(instance.LookingDirection.x * MaxSpeed, Rb.velocity.y);
+            Rb.velocity = new Vector2(playerState.LookingDirection.x * MaxSpeed, Rb.velocity.y);
+        }
+        else
+        {
+            Rb.velocity = new Vector2(0, Rb.velocity.y);
         }
     }
 
@@ -49,31 +53,31 @@ public class PlayerMovement : PlayerState
 
         if (Vertical > 0 && isGrounded)
         {
-            PlayerState.instance.IsJumping = true;
+            playerState.IsJumping = true;
             initialY = transform.position.y; 
         }
 
-        if (Vertical > 0 && PlayerState.instance.IsJumping)
+        if (Vertical > 0 && playerState.IsJumping)
         {
             Rb.velocity = new Vector2(Rb.velocity.x, JumpForce);
             if (transform.position.y - initialY >= MaxJumpHeight)
             {
-                PlayerState.instance.IsJumping = false;
-                PlayerState.instance.IsFalling = true;
+                playerState.IsJumping = false;
+                playerState.IsFalling = true;
                 return;
             }
         }
         
         if (Vertical <= 0)
         {
-            PlayerState.instance.IsJumping  = false;
-            PlayerState.instance.IsFalling = true;
+            playerState.IsJumping  = false;
+            playerState.IsFalling = true;
         }
 
         
         if (Rb.velocity.y == 0)
         {
-            PlayerState.instance.IsFalling = false;
+            playerState.IsFalling = false;
         }
     }   
 

@@ -1,9 +1,11 @@
+using HungryNight.Player;
 using UnityEngine;
-using StateMachine;
 
-public class Attacking : PlayerState
+[RequireComponent(typeof(PlayerState))]
+public class Attacking : MonoBehaviour
 {
     Collider2D AttackBox;
+    PlayerState playerState;
     void Start()
     {
         AttackBox = GameObject.Find("AttackBox").GetComponent<Collider2D>();
@@ -11,10 +13,9 @@ public class Attacking : PlayerState
 
     void Update()
     {
-        if (instance.IsAttacking)
+        if (playerState.IsAttacking)
         {
-            AttackBox.transform.localPosition = instance.LookingDirection;
-            
+            AttackBox.transform.localPosition = playerState.LookingDirection;
         }
     }
 }

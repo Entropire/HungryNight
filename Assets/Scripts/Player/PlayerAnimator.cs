@@ -1,36 +1,40 @@
-﻿using UnityEngine;
+﻿using HungryNight.Player;
+using UnityEngine;
 
 namespace StateMachine
 {
-    [RequireComponent(typeof(Animator))]
+    [RequireComponent(typeof(Animator)), RequireComponent(typeof(PlayerState))]
     public class PlayerAnimator : MonoBehaviour
     {
         Animator animator;
+        PlayerState playerState;
+        
         private void Start()
         {
             animator = GetComponent<Animator>();
+            playerState = GetComponent<PlayerState>();
         }
 
         private void Update()
         {
             ResetTriggers();
-            if (PlayerState.instance.IsWalking)
+            if (playerState.IsWalking)
             {
                 animator.SetTrigger("IsWalking");
             }
-            else if (PlayerState.instance.IsJumping)
+            else if (playerState.IsJumping)
             {
                 animator.SetTrigger("IsJumping");
             }
-            else if (PlayerState.instance.IsFalling)
+            else if (playerState.IsFalling)
             {
                 animator.SetTrigger("IsFalling");
             }
-            else if (PlayerState.instance.IsAttacking)
+            else if (playerState.IsAttacking)
             {
                 animator.SetTrigger("IsAttacking");
             }
-            else if (PlayerState.instance.IsHit)
+            else if (playerState.IsHit)
             {
                 animator.SetTrigger("IsHit");
             }
