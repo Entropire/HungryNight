@@ -44,10 +44,17 @@ namespace StateMachine
                 Debug.LogError("Invalid looking direction in " + this);
             }
         }
+        
         void Start()
         {
+            Debug.Log("test");
+            
             if (instance == null)
+            {
+                Debug.Log(this);
                 instance = this;
+                Debug.Log(instance);
+            }
 
             Attack += Attacked;
         }
