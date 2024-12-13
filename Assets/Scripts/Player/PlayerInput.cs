@@ -1,81 +1,53 @@
-﻿using System;
+using System;
 using UnityEngine;
 
-namespace HungryNight.Player
+public class PlayerInput : MonoBehaviour
 {
-    public class PlayerInput : MonoBehaviour
+    public static PlayerInput Instance;
+    public static event Action<Vector2> LookingDirection;
+    public static event Action IsWalking;
+    public static event Action Attack;
+
+    private void Start()
     {
-        [SerializeField] private Inputs inputs;
-        
-        public static PlayerInput instance;
-        
-        public event Action<Vector2> LookingDirection;
-        public event Action<bool> IsWalking;
-        public event Action<bool> IsJumping;
-        public event Action IsAttack;
-        
-        private void Start()
+        if (Instance == null)
         {
-            if (instance == null)
-            {
-                instance = this;
-            }
-            else
-            {
-                Debug.LogWarning("There is already a PlayerInputs instance!");
-            }
+            Instance = this;
         }
-
-        private void Update()
+    }
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
         {
-            bool isDown = false;
+            Attack?.Invoke();
+            print(this + "Attack");
+        }
+        switch (Input.inputString.ToLower())
+        {
+            case "w":
+                LookingDirection?.Invoke(Vector2.up);
+                print(this + "Up");
 
-            foreach (KeyCode key in inputs.up)
-                if (!isDown) isDown = Input.GetKey(key);
-
-            
-            if (isDown) LookingDirection?.Invoke(Vector2.up);
-            isDown = false;
-            
-            foreach (KeyCode key in inputs.down)
-                if (!isDown) isDown = Input.GetKey(key);
-
-            if (isDown) LookingDirection?.Invoke(Vector2.down);
-            isDown = false;
-            
-            foreach (KeyCode key in inputs.left)
-                if (!isDown) isDown = Input.GetKey(key);
-
-            if (isDown)
-            {
+                break;
+            case "a":
                 LookingDirection?.Invoke(Vector2.left);
-                IsWalking?.Invoke(true);
-            }
-            else IsWalking?.Invoke(false);
-            isDown = false;
-            
-            foreach (KeyCode key in inputs.right)
-                if (!isDown) isDown = Input.GetKey(key);
+                print(this + "Left");
 
-            if (isDown)
-            {
+                IsWalking?.Invoke();
+                break;
+            case "d":
                 LookingDirection?.Invoke(Vector2.right);
-                IsWalking?.Invoke(true);
-            }
-            else IsWalking?.Invoke(false);
-            isDown = false;
-            
-            foreach (KeyCode key in inputs.jump)
-                if (!isDown) isDown = Input.GetKey(key);
-            
-            if (isDown) IsJumping?.Invoke(true);
-            else IsJumping?.Invoke(false);
-            isDown = false;
+                IsWalking?.Invoke();
+                print(this + "Right");
 
-            foreach (KeyCode key in inputs.attack)
-                if (!isDown) isDown = Input.GetKey(key);
-            
-            if(isDown) IsAttack?.Invoke();
+                break;
+            case "s":
+                LookingDirection?.Invoke(Vector2.down);
+                print(this + "Down");
+
+                break;
+            default:
+                break;
         }
     }
 }
