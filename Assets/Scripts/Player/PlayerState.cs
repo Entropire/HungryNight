@@ -1,16 +1,30 @@
 ﻿using System;
 using UnityEngine;
 
-public class PlayerState : MonoBehaviour
+public class PlayerState : PlayerInput
 {
-    [SerializeField] float AttackCooldown, AttackDuration, Timer;
-    public Vector2 LookingDirection { get; private set; } = new Vector2(1, 0);
-    public bool IsJumping, IsFalling, IsWalking;
+    public static new PlayerState Instance;
+
+    public new Vector2 LookingDirection { get; private set; } = new Vector2(1, 0);
+    public new bool IsWalking;
+
+    public Vector3 LastGroundedLocation;
+    public bool IsJumping, IsFalling;
     public bool IsHit;
     public bool IsAttacking = false, AttackingOnCooldown = false;
 
+    private Transform GroundCheckPos;
+    private float GroundCheckRadius;
+    float AttackCooldown, AttackDuration, Timer;
+
+
     private void Start()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+
         PlayerInput.Attacking += Attacked;
         PlayerInput.IsWalking += () => IsWalking = true;
         PlayerInput.LookingDirection += (Vector2 Vector2) => LookingDirection = Vector2;
@@ -20,6 +34,11 @@ public class PlayerState : MonoBehaviour
     {
         IsAttacking = true;
         AttackingOnCooldown = true;
+    }
+
+    public bool GetGroundState()
+    {
+        return Physics2D.OverlapCircle(GroundCheckPos.position, GroundCheckRadius, LayerMask.GetMask("Ground"));
     }
 
     private void Update()
@@ -34,6 +53,10 @@ public class PlayerState : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (GetGroundState())
+        {
+           LastGroundedLocation = transform.position;
+        }
         IsWalking = false;
         IsFalling = false;
         IsHit = false;

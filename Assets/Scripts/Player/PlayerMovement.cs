@@ -1,45 +1,37 @@
 using HungryNight.Player;
 using StateMachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D)), RequireComponent(typeof(PlayerState)), RequireComponent(typeof(Rigidbody2D))]
-public class PlayerMovement : MonoBehaviour
+[RequireComponent(typeof(BoxCollider2D), typeof(PlayerState), typeof(PlayerInput)), 
+    RequireComponent (typeof(Rigidbody2D))]
+public class PlayerMovement : PlayerState
 {
     private Rigidbody2D Rb;
-    private PlayerState playerState;
-    private float initialY;
     
     [SerializeField] private float MaxSpeed;
     
-    [SerializeField] private float JumpForce;
-    [SerializeField] private float MaxJumpHeight;
-    
-    [SerializeField] private Transform GroundCheck;
-    [SerializeField] private float GroundCheckRadius;
-
-    private bool isGrounded;
-    private Vector3 LastGroundedLocation;
-    private Vector2 PlayerInput;
+    [SerializeField] private float JumpForce = 2;
+    [SerializeField] private Vector2 MaxJumpHeight = new(0, 3);
 
 
     void Start()
     {
         Rb = gameObject.GetComponent<Rigidbody2D>();
-        playerState = gameObject.GetComponent<PlayerState>();
     }
 
     private void Update()
     {
-        IsGrounded();
-        Movement();
-        Jump();
+        Moving();
+        Jumping();
     }
 
-    private void Movement()
+    private void Moving()
     {
-        if (playerState.IsWalking)
+        print(Instance);
+        if (Instance.IsWalking)
         {
-            Rb.velocity = new Vector2(playerState.LookingDirection.x * MaxSpeed, Rb.velocity.y);
+            Rb.velocity = new Vector2(Instance.LookingDirection.x * MaxSpeed, Rb.velocity.y);
         }
         else
         {
@@ -47,49 +39,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Jump()
+    private void Jumping()
     {
-        float Vertical = Input.GetAxis("Vertical");
+        MaxJumpHeight = (Vector2)Instance.LastGroundedLocation + MaxJumpHeight;
+        if (Instance.IsJumping && Instance.LastGroundedLocation.y < MaxJumpHeight.y)
+        {
 
-        if (Vertical > 0 && isGrounded)
-        {
-            playerState.IsJumping = true;
-            initialY = transform.position.y; 
-        }
-
-        if (Vertical > 0 && playerState.IsJumping)
-        {
-            Rb.velocity = new Vector2(Rb.velocity.x, JumpForce);
-            if (transform.position.y - initialY >= MaxJumpHeight)
-            {
-                playerState.IsJumping = false;
-                playerState.IsFalling = true;
-                return;
-            }
-        }
-        
-        if (Vertical <= 0)
-        {
-            playerState.IsJumping  = false;
-            playerState.IsFalling = true;
-        }
-
-        
-        if (Rb.velocity.y == 0)
-        {
-            playerState.IsFalling = false;
         }
     }   
-
-    private void IsGrounded()
-    {
-        isGrounded = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, LayerMask.GetMask("Ground"));
-
-        if (isGrounded)
-        {
-            LastGroundedLocation = transform.position;
-        }
-    }
 }   
 
 
