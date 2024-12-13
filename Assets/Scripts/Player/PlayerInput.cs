@@ -6,7 +6,7 @@ public class PlayerInput : MonoBehaviour
     public static PlayerInput Instance;
     public static event Action<Vector2> LookingDirection;
     public static event Action IsWalking;
-    public static event Action Attack;
+    public static event Action Attacking;
 
     private void Start()
     {
@@ -19,8 +19,8 @@ public class PlayerInput : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Attack?.Invoke();
-            print(this + "Attack");
+            Attacking?.Invoke();
+            print(this + "Attacking");
         }
         switch (Input.inputString.ToLower())
         {
