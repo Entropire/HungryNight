@@ -500,9 +500,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GeoAmount: {fileID: 85452707}
   GeoAdded: {fileID: 852464773}
-  countdownTimer: 1.5
-  geoPickupTime: 1.5
-  updateInterval: 0.1
+  EventualColor: {r: 0, g: 0, b: 0, a: 0}
+  DelayBeforeAdding: 2
+  AddDuration: 1
   OnGeoUpdateComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -632,10 +632,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7476aef8aa6d2f4eb8620b174b4e109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childTransform: {fileID: 18990906}
-  depositList: []
-  directionList: []
-  food:
+  ChildTransform: {fileID: 18990906}
+  DepositList: []
+  DirectionList: []
+  Food:
   - {fileID: 2148762176300426404, guid: 8b3f9f5b82e83a54cb49cc44062e5c7e, type: 3}
   - {fileID: 4970959845870287660, guid: b189b184d3abb3c429c177972b93887f, type: 3}
   - {fileID: 5399893597531370065, guid: eb18e9b6306044e4d9f90d206b2aca3c, type: 3}
