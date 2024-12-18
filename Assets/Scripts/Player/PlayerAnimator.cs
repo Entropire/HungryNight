@@ -1,5 +1,4 @@
-﻿using HungryNight.Player;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace StateMachine
 {

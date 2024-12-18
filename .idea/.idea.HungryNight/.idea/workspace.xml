@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="569b8e93-2b69-4c45-92b9-7664e4462739" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HungryNight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HungryNight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Models/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Models/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AttackCheckCollider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AttackCheckCollider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Scenes/Movement.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Scenes/Movement.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Attacking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Attacking.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerAnimator.cs" afterDir="false" />
@@ -96,7 +96,7 @@
       <workItem from="1733914366446" duration="5295000" />
       <workItem from="1733921445900" duration="22000" />
       <workItem from="1733991169986" duration="6962000" />
-      <workItem from="1734509427791" duration="6033000" />
+      <workItem from="1734509427791" duration="9430000" />
     </task>
     <servers />
   </component>
@@ -113,24 +113,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerState.cs</url>
-          <line>41</line>
-          <properties documentPath="C:\Users\Quinten\Desktop\Projects\c#\HungryNight\Assets\Scripts\Player\PlayerState.cs" containingFunctionPresentation="Method 'Jump'">
-            <startOffsets>
-              <option value="1162" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1163" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
