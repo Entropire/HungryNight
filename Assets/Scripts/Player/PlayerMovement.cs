@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(PlayerState))]
-[RequireComponent(typeof(InputMaganger))]
+
 #endregion
 public class PlayerMovement : MonoBehaviour
 {
@@ -28,10 +28,10 @@ public class PlayerMovement : MonoBehaviour
     {
         Rb = gameObject.GetComponent<Rigidbody2D>();
 
-        InputMaganger.MoveDirection += (diraction) =>
-        {
-            PlayerInput = diraction;
-        };
+        //InputMaganger.MoveDirection += (diraction) =>
+        //{
+        //    PlayerInput = diraction;
+        //};
     }
 
     private void Update()

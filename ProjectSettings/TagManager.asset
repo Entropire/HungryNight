@@ -3,9 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Spike
-  - Destroyable
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -13,10 +11,10 @@ TagManager:
   - Ground
   - Water
   - UI
-  - Entity
-  - Trap
   - 
   - 
+  - Background
+  - PostProcessing
   - Entity
   - 
   - 
@@ -42,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: New Layer 1
+    uniqueID: 1711040937
+    locked: 0
+  - name: New Layer 2
+    uniqueID: 111595019
     locked: 0

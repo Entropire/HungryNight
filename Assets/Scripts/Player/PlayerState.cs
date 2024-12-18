@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace StateMachine
 {
-    public class PlayerState : MonoBehaviour
+    public class PlayerState : PlayerInput
     {
         #region FieldAndPropertyHandling
 
@@ -39,7 +39,8 @@ namespace StateMachine
             if (LookingDirection == Vector2.up || LookingDirection == Vector2.down || LookingDirection == Vector2.left || LookingDirection == Vector2.right)
             {
                 LookingDirection = NewLookingDirection;
-            } else
+            }
+            else
             {
                 Debug.LogError("Invalid looking direction in " + this);
             }
@@ -49,13 +50,14 @@ namespace StateMachine
             if (instance == null)
                 instance = this;
 
-            InputMaganger.Mepping += Attacked;
+            Attack += Attacked;
         }
 
         #endregion
 
-        public Vector2 LookingDirection { get; private set; } = new Vector2(1, 0);
-        public bool IsJumping, IsFalling, IsWalking;
+        public new Vector2 LookingDirection { get; private set; } = new Vector2(1, 0);
+        public bool IsJumping, IsFalling;
+        public new bool IsWalking;
         public bool IsHit;
         public bool IsAttacking = false, AttackingOnCooldown = false;
 
