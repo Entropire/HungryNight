@@ -11,11 +11,10 @@ public class HitPushback : MonoBehaviour
     private Rigidbody2D rb;
     private bool ishitCooldown;
     private int YhitCords = 4;
-    public static event Action Gethit;
     private bool isntFallSpike;
     private PlayerMovement playMovement;
     [SerializeField] private Image Blackfade;
-    [SerializeField] private Vector3 LastPos;
+    [SerializeField] private List<Vector3> LastPos;
     [SerializeField] private LayerMask Spiketrap;
     [SerializeField] private Color BaseColor;
     [SerializeField] private Color ToColor;
@@ -45,7 +44,7 @@ public class HitPushback : MonoBehaviour
                 
                 if (isntFallSpike)
                 {
-                    transform.position = LastPos;
+                    transform.position = LastPos[0];
                     rb.velocity = new Vector3(0, 0, 0);
                 }
             }
@@ -61,10 +60,6 @@ public class HitPushback : MonoBehaviour
             }
             
         }   
-        if (!Physics2D.CircleCast(transform.position, 4, Vector2.zero, 8f, Spiketrap) && playMovement.isGrounded)
-        {
-            LastPos = playMovement.LastGroundedLocation;
-        }
         Blackfade.color = Color.Lerp(Blackfade.color, ToColor, 1f * Time.fixedDeltaTime);
     }
 
@@ -87,7 +82,7 @@ public class HitPushback : MonoBehaviour
                     isntFallSpike = false;
                 }
 
-                Gethit?.Invoke();
+                // Gethit?.Invoke();
 
                 if (direction.x > 0)
                 {
