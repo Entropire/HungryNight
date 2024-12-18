@@ -3,38 +3,35 @@ using UnityEngine;
 
 namespace StateMachine
 {
-    [RequireComponent(typeof(Animator)), RequireComponent(typeof(PlayerState))]
     public class PlayerAnimator : MonoBehaviour
     {
         Animator animator;
-        PlayerState playerState;
         
         private void Start()
         {
             animator = GetComponent<Animator>();
-            playerState = GetComponent<PlayerState>();
         }
 
         private void Update()
         {
             ResetTriggers();
-            if (playerState.IsWalking)
+            if (PlayerState.Instance.IsWalking)
             {
                 animator.SetTrigger("IsWalking");
             }
-            else if (playerState.IsJumping)
+            else if (PlayerState.Instance.IsJumping)
             {
                 animator.SetTrigger("IsJumping");
             }
-            else if (playerState.IsFalling)
+            else if (PlayerState.Instance.IsFalling)
             {
                 animator.SetTrigger("IsFalling");
             }
-            else if (playerState.IsAttacking)
+            else if (PlayerState.Instance.IsAttacking)
             {
                 animator.SetTrigger("IsAttacking");
             }
-            else if (playerState.IsHit)
+            else if (PlayerState.Instance.IsHit)
             {
                 animator.SetTrigger("IsHit");
             }

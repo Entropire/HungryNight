@@ -1,21 +1,18 @@
-using HungryNight.Player;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerState))]
 public class Attacking : MonoBehaviour
 {
-    Collider2D AttackBox;
-    PlayerState playerState;
-    void Start()
-    {
-        AttackBox = GameObject.Find("AttackBox").GetComponent<Collider2D>();
-    }
+    [SerializeField] Collider2D AttackBox;
 
     void Update()
     {
-        if (playerState.IsAttacking)
+        if (PlayerState.Instance.IsAttacking)
         {
-            AttackBox.transform.localPosition = playerState.LookingDirection;
+            AttackBox.enabled = true;
+        }
+        else
+        {
+            AttackBox.enabled = false;
         }
     }
 }

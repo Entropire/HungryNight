@@ -3,40 +3,57 @@ using UnityEngine;
 
 public class PlayerState : PlayerInput
 {
-    public static new PlayerState Instance;
+    public static PlayerState Instance;
 
-    public new Vector2 LookingDirection { get; private set; } = new Vector2(1, 0);
-    public new bool IsWalking;
+    [SerializeField] private Transform GroundCheckPos;
+    [SerializeField] private float GroundCheckRadius;
+    
+    [NonSerialized] public Vector2 LookingDirection = Vector2.zero;
+    [NonSerialized] public bool IsWalking;
+    [NonSerialized] public Vector3 LastGroundedLocation;
+    [NonSerialized] public bool IsJumping, IsFalling;
+    [NonSerialized] public bool IsHit;
+    [NonSerialized] public bool IsAttacking; 
+    
+    private bool AttackingOnCooldown;
+    private float AttackCooldown, AttackDuration, Timer;
 
-    public Vector3 LastGroundedLocation;
-    public bool IsJumping, IsFalling;
-    public bool IsHit;
-    public bool IsAttacking = false, AttackingOnCooldown = false;
-
-    private Transform GroundCheckPos;
-    private float GroundCheckRadius;
-    float AttackCooldown, AttackDuration, Timer;
-
-
-    private void Start()
+    
+    private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
         }
-
-        PlayerInput.Attacking += Attacked;
-        PlayerInput.IsWalking += () => IsWalking = true;
-        PlayerInput.LookingDirection += (Vector2 Vector2) => LookingDirection = Vector2;
+        
+        AttackingKeyPressed += Instance.Attacked;
+        WalkingKeyPressed += (Bool) => Instance.IsWalking = Bool;
+        JumpingKeyPressed += Instance.Jump;
+        LookingDirectionUpdated += (Vector2) => Instance.LookingDirection = Vector2;
     }
 
-    void Attacked()
+    private void Attacked()
     {
         IsAttacking = true;
         AttackingOnCooldown = true;
     }
 
-    public bool GetGroundState()
+    private void Jump(bool keyPressed)
+    {
+        if (keyPressed)
+        {
+            if (GetGroundState())
+            {
+                IsJumping = true;
+            }
+        }
+        else
+        {
+            IsJumping = false;
+        }
+    }
+
+    private bool GetGroundState()
     {
         return Physics2D.OverlapCircle(GroundCheckPos.position, GroundCheckRadius, LayerMask.GetMask("Ground"));
     }
@@ -50,52 +67,21 @@ public class PlayerState : PlayerInput
             else if (Timer > AttackCooldown) AttackingOnCooldown = false; Timer = 0;
         }
     }
+    
+    
 
     private void FixedUpdate()
     {
         if (GetGroundState())
         {
            LastGroundedLocation = transform.position;
+           if (IsFalling)
+           {
+               IsFalling = false;
+           }
         }
-        IsWalking = false;
-        IsFalling = false;
+        
+        
         IsHit = false;
     }
 }
-
-
-// public void SetAttackCooldown(float NewCooldown)
-// {
-//     if (AttackCooldown < AttackDuration)
-//     {
-//         Debug.LogError("Please don't set the AttackWindow higher than the AttackCooldown - Nothing changed with this call");
-//     }
-//     else
-//     {
-//         AttackCooldown = NewCooldown;
-//     }
-// }
-//
-// public void SetAttackHitWindow(float HitWindow)
-// {
-//     if (AttackCooldown < AttackDuration)
-//     {
-//         Debug.LogError("Please don't set the AttackWindow higher than the AttackCooldown - Nothing changed with this call");
-//     }
-//     else
-//     {
-//         AttackDuration = HitWindow;
-//     }
-// }
-//
-// public void SetLookingDirection(Vector2 NewLookingDirection)
-// {
-//     if (LookingDirection == Vector2.up || LookingDirection == Vector2.down || LookingDirection == Vector2.left || LookingDirection == Vector2.right)
-//     {
-//         LookingDirection = NewLookingDirection;
-//     }
-//     else
-//     {
-//         Debug.LogError("Invalid looking direction in " + this);
-//     }
-// }
