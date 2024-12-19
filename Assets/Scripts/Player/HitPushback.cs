@@ -50,7 +50,7 @@ public class HitPushback : MonoBehaviour
             }
             if (timeelepsed > 0.7)
             {
-                playMovement.enabled = true;
+                // playMovement.enabled = true;
             }
             if (timeelepsed > hitCooldowntime)
             {
@@ -77,7 +77,7 @@ public class HitPushback : MonoBehaviour
                     isntFallSpike = true;
                 }else
                 {
-                    YhitCords = 7;
+                    YhitCords = 9;
                     ToColor = BaseColor;
                     isntFallSpike = false;
                 }
