@@ -276,8 +276,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GroundCheckPos: {fileID: 7033612451940630902}
   GroundCheckRadius: 0.2
-  AttackCooldown: 0
-  AttackDuration: 0
+  AttackCooldown: 0.1
+  AttackDuration: 0.2
   MaxSpeed: 10
   JumpForce: 5
   MaxJumpHeight: 2
@@ -338,9 +338,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934d99fb61b608c48bdfc46d01d44395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackBoxLeftRight: {fileID: 3814023878743451434}
-  AttackBoxUp: {fileID: 6629543774218008373}
-  AttackBoxDown: {fileID: 1414617205289255786}
+  AttackBoxLeftRight: {fileID: 8936262593582773990}
+  AttackBoxUp: {fileID: 3577887228974907236}
+  AttackBoxDown: {fileID: 211554053951759150}
 --- !u!1 &3814023878743451434
 GameObject:
   m_ObjectHideFlags: 0

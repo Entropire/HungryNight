@@ -67,12 +67,9 @@ public class PlayerState : PlayerInput
     
     private IEnumerator AttackCooldownTimer()
     {
-        Debug.Log("player attacking");
         yield return new WaitForSeconds(AttackDuration);
-        Debug.Log("not attacking");
         IsAttacking = false;
         yield return new WaitForSeconds(AttackCooldown);
-        Debug.Log("player can attack again");
         AttackingOnCooldown = false;
     }
 
