@@ -7,6 +7,7 @@ public class AttackCollider : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Attacked and hit");
         OnPlayerAttacked?.Invoke(other.gameObject);
     }
 }

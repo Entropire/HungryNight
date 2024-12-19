@@ -5,48 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="569b8e93-2b69-4c45-92b9-7664e4462739" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Animations/PlayerAnims.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Animations/PlayerAnims.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Animations/healthbar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Animations/jump_spritesheet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Animations/jump_spritesheet.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Animations/jump_spritesheet_0 (1).controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Animations/jump_spritesheet_0 (1).controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Animations/jump_spritesheet_0.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Animations/jump_spritesheet_0.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Animations/spritesheet health.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/HealthSprites/HitTaken.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/HealthSprites/HitTaken.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/HealthSprites/IMG_4107_1.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/HealthSprites/IMG_4107_1.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20001.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20001.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20002.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20002.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20003.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20003.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20004.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20004.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20005.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20005.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20006.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20006.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20007.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20007.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20008.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20008.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20009.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20009.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20010.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20010.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20011.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20011.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20012.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/JumpSprites/hollowknight jump animation_test20012.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Player/Walkanimation/Hunfrynight_spritesheet_Walk.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Textures/Player/Walkanimation/Hunfrynight_spritesheet_Walk.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HungryNight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HungryNight/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Level/Prefabs/MilkShake.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Prefabs/MilkShake.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Prefabs/Player.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Prefabs/Player.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Scenes/Movement.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Scenes/Movement.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Level/Prefabs/Varmkorv.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Prefabs/Varmkorv.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Level/Prefabs/pizza.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Prefabs/pizza.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Level/Scenes/Geo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Scenes/Geo.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Level/Scenes/InputSystem.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Level/Scenes/InputSystem.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Level/Scenes/Lisa.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Level/Scenes/Lisa.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Level/Scenes/Movement.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Level/Scenes/Movement.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Level/Scenes/kira.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Level/Scenes/kira.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Geo/GeoDeposit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Geo/GeoDeposit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Geo/GeoDrop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Geo/GeoDrop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/AttackCollider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/AttackCollider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Attacking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Attacking.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +45,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "PlayerMovement",
+    "git-widget-placeholder": "Geo",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",

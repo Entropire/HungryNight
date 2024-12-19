@@ -2,35 +2,33 @@ using UnityEngine;
 
 public class Attacking : MonoBehaviour
 {
-    [SerializeField] Collider2D AttackBoxLeftRight;
-    [SerializeField] Collider2D AttackBoxUp;
-    [SerializeField] Collider2D AttackBoxDown;
+    [SerializeField] GameObject AttackBoxLeftRight;
+    [SerializeField] GameObject AttackBoxUp;
+    [SerializeField] GameObject AttackBoxDown;
 
-    void Update()
+    void FixedUpdate()
     {
-
-        
         if (PlayerState.Instance.IsAttacking)
         {
-            if (PlayerState.Instance.LookingDirection == new Vector2(0, -1))
-            {
-                AttackBoxUp.enabled = true;
-            }
             if (PlayerState.Instance.LookingDirection == new Vector2(0, 1))
             {
-                AttackBoxDown.enabled = true;   
+                AttackBoxUp.SetActive(true);
+            }   
+            if (PlayerState.Instance.LookingDirection == new Vector2(0, -1))
+            {
+                AttackBoxDown.SetActive(true);
             }
             if (PlayerState.Instance.LookingDirection == new Vector2(1, 0) || PlayerState.Instance.LookingDirection == new Vector2(-1, 0))
             {
-                AttackBoxLeftRight.enabled = true;  
+                Debug.Log("attacking test");
+                AttackBoxLeftRight.SetActive(true);
             }
         }
         else
         {
-            
-            AttackBoxLeftRight.enabled = false;
-            AttackBoxUp.enabled = false;
-            AttackBoxDown.enabled = false;
+            AttackBoxLeftRight.SetActive(false);
+            AttackBoxUp.SetActive(false);
+            AttackBoxDown.SetActive(false);
         }
     }
 }

@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Rendering;
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GeoDrop : MonoBehaviour
 {
@@ -19,12 +18,12 @@ public class GeoDrop : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             geoUi.AddGeo(1);
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using TMPro;
 
 public class GeoDeposit : MonoBehaviour
 {
@@ -20,14 +18,18 @@ public class GeoDeposit : MonoBehaviour
         DirectionList.Add(Vector2.up);
         DirectionList.Add(Vector2.left);
         DirectionList.Add(Vector2.right);
-    }
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
+
+        AttackCollider.OnPlayerAttacked += (gb) =>
         {
-            StartCoroutine(geospawn());
-        }
+            Debug.Log("recieved attack event");
+            if (gb == gameObject)
+            {
+                StartCoroutine(geospawn());
+                Debug.Log("hit geo");
+            }
+        };
     }
+
     IEnumerator geospawn(int amount = 3, int currentamount = 0)
     {
         health -= 1;
@@ -37,7 +39,6 @@ public class GeoDeposit : MonoBehaviour
         }
 
         currentamount += amount;
-        Debug.Log(currentamount);
         for (int i = 0; i < amount; i++)
         {
             GameObject geo = Instantiate(Food[Random.Range(0, 3)], transform.position, Quaternion.identity);
