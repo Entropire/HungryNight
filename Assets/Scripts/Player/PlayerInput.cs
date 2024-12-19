@@ -3,42 +3,54 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    public static PlayerInput Instance;
-    public static event Action<Vector2> LookingDirection;
-    public static event Action IsWalking;
-    public static event Action Attack;
-
-    private void Start()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-    }
+    public static event Action<Vector2> LookingDirectionUpdated;
+    public static event Action<bool> WalkingKeyPressed;
+    public static event Action<bool> JumpingKeyPressed;
+    public static event Action AttackingKeyPressed;
+    
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Attack?.Invoke();
+            AttackingKeyPressed?.Invoke();
         }
-        switch (Input.inputString.ToLower())
+
+        if (Input.GetKey(KeyCode.W))
         {
-            case "w":
-                LookingDirection?.Invoke(Vector2.up);
-                break;
-            case "a":
-                LookingDirection?.Invoke(Vector2.left);
-                IsWalking?.Invoke();
-                break;
-            case "d":
-                LookingDirection?.Invoke(Vector2.right);
-                IsWalking?.Invoke();
-                break;
-            case "s":
-                LookingDirection?.Invoke(Vector2.down);
-                break;
-            default:
-                break;
+            LookingDirectionUpdated?.Invoke(Vector2.up);
+        }
+        
+        if (Input.GetKey(KeyCode.S))
+        {
+            LookingDirectionUpdated?.Invoke(Vector2.down);
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            LookingDirectionUpdated?.Invoke(Vector2.right);
+        }
+        
+        if (Input.GetKey(KeyCode.A))
+        {
+            LookingDirectionUpdated?.Invoke(Vector2.left);
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            JumpingKeyPressed?.Invoke(true);
+        }
+        else
+        {
+            JumpingKeyPressed?.Invoke(false);
+        }
+        
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
+            WalkingKeyPressed?.Invoke(true);
+        }
+        else
+        {
+            WalkingKeyPressed?.Invoke(false);
         }
     }
 }
