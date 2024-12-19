@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e367ce8e601d24647abf4cd394763ba7
+guid: 415f1ed6e132b444da25a40f58865ca6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 75
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -93,194 +93,296 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hunfrynight_spritesheet_Walk_0
+      name: jump_spritesheet_0
       rect:
         serializedVersion: 2
-        x: 388
-        y: 1376
-        width: 386
-        height: 720
+        x: 172
+        y: 1216
+        width: 324
+        height: 487
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0947ded6ce9c2f4e83a19bf04014e2b
-      internalID: 1265365059
+      spriteID: d15551119e7475546bbebb7d7a24dfa9
+      internalID: 1306413449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hunfrynight_spritesheet_Walk_1
+      name: jump_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 986
-        y: 1376
+        x: 685
+        y: 1216
+        width: 330
+        height: 484
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b96dcb1525af4749b9fc1ce443bdd8b
+      internalID: -706158368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 1205
+        width: 401
+        height: 463
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d9f39caec0a40c4db186c7bf47e0645
+      internalID: 1760843098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 1216
+        width: 394
+        height: 463
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2c7f89965d3b6a4d9d8c0e00ce05be2
+      internalID: 1602340470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 2557
+        y: 1205
+        width: 376
+        height: 529
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d53d759b2eccc474eaf1dd298e0f765a
+      internalID: 784651285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 3168
+        y: 1216
+        width: 365
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7018216e2d89280448858c55b8afb6b0
+      internalID: 209677750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 567
+        width: 409
+        height: 493
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a1639cc894943c4e820e54371a90f4b
+      internalID: 892749240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 550
         width: 448
-        height: 700
+        height: 499
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0c66a45f29e1484cab1723256522627
-      internalID: 1548077616
+      spriteID: b11216a5fa7f675449371294363add93
+      internalID: -675713097
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hunfrynight_spritesheet_Walk_2
+      name: jump_spritesheet_8
       rect:
         serializedVersion: 2
-        x: 1599
-        y: 1365
-        width: 465
-        height: 690
+        x: 1188
+        y: 567
+        width: 433
+        height: 505
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69c1b01fb728deb498c8df3164c03ea1
-      internalID: -587210290
+      spriteID: c44ba0125cd3dc24bb4763d7e2a13fdb
+      internalID: 2131321672
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hunfrynight_spritesheet_Walk_3
+      name: jump_spritesheet_9
       rect:
         serializedVersion: 2
-        x: 2334
-        y: 1365
-        width: 441
-        height: 677
+        x: 1818
+        y: 562
+        width: 433
+        height: 476
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56dca2d5839379744a98b15e9b8900fe
-      internalID: -937880492
+      spriteID: 13e8e69faf5cd4340a47d5ab5b3d2e39
+      internalID: -130051318
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hunfrynight_spritesheet_Walk_4
+      name: jump_spritesheet_10
       rect:
         serializedVersion: 2
-        x: 3045
-        y: 1354
-        width: 431
-        height: 688
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: acbd1b4d09cfede488c8bdcb4aa11052
-      internalID: 1189306142
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hunfrynight_spritesheet_Walk_5
-      rect:
-        serializedVersion: 2
-        x: 523
-        y: 424
-        width: 499
-        height: 677
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9fea3f385a996374e937d436b9d74ac1
-      internalID: 1945531165
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hunfrynight_spritesheet_Walk_6
-      rect:
-        serializedVersion: 2
-        x: 1283
-        y: 413
-        width: 498
-        height: 688
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 782270f4ad99e7941b5b99dba3595d11
-      internalID: -881890378
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hunfrynight_spritesheet_Walk_7
-      rect:
-        serializedVersion: 2
-        x: 2108
-        y: 390
+        x: 2448
+        y: 567
         width: 448
-        height: 711
+        height: 473
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e25abdae63f42546b43dc5aebf0a489
-      internalID: -925368519
+      spriteID: d3a72e65314185945a0f5fda38eac8a7
+      internalID: 1542691448
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hunfrynight_spritesheet_Walk_8
+      name: jump_spritesheet_11
       rect:
         serializedVersion: 2
-        x: 2906
-        y: 390
-        width: 452
-        height: 711
+        x: 3072
+        y: 562
+        width: 461
+        height: 487
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 708b3fef4f5d53c4abb78d6a120d23d1
-      internalID: -919862748
+      spriteID: fc234758a30d2a0469b97fb34719ce5a
+      internalID: -1353079389
       vertices: []
       indices: 
       edges: []
@@ -296,15 +398,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Hunfrynight_spritesheet_Walk_0: 1265365059
-      Hunfrynight_spritesheet_Walk_1: 1548077616
-      Hunfrynight_spritesheet_Walk_2: -587210290
-      Hunfrynight_spritesheet_Walk_3: -937880492
-      Hunfrynight_spritesheet_Walk_4: 1189306142
-      Hunfrynight_spritesheet_Walk_5: 1945531165
-      Hunfrynight_spritesheet_Walk_6: -881890378
-      Hunfrynight_spritesheet_Walk_7: -925368519
-      Hunfrynight_spritesheet_Walk_8: -919862748
+      jump_spritesheet_0: 1306413449
+      jump_spritesheet_1: -706158368
+      jump_spritesheet_10: 1542691448
+      jump_spritesheet_11: -1353079389
+      jump_spritesheet_2: 1760843098
+      jump_spritesheet_3: 1602340470
+      jump_spritesheet_4: 784651285
+      jump_spritesheet_5: 209677750
+      jump_spritesheet_6: 892749240
+      jump_spritesheet_7: -675713097
+      jump_spritesheet_8: 2131321672
+      jump_spritesheet_9: -130051318
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

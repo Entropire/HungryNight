@@ -1,20 +1,36 @@
 using UnityEngine;
-using StateMachine;
 
-public class Attacking : PlayerState
+public class Attacking : MonoBehaviour
 {
-    Collider2D AttackBox;
-    void Start()
-    {
-        AttackBox = GameObject.Find("AttackBox").GetComponent<Collider2D>();
-    }
+    [SerializeField] Collider2D AttackBoxLeftRight;
+    [SerializeField] Collider2D AttackBoxUp;
+    [SerializeField] Collider2D AttackBoxDown;
 
     void Update()
     {
-        if (instance.IsAttacking)
+
+        
+        if (PlayerState.Instance.IsAttacking)
         {
-            AttackBox.transform.localPosition = instance.LookingDirection;
+            if (PlayerState.Instance.LookingDirection == new Vector2(0, -1))
+            {
+                AttackBoxUp.enabled = true;
+            }
+            if (PlayerState.Instance.LookingDirection == new Vector2(0, 1))
+            {
+                AttackBoxDown.enabled = true;   
+            }
+            if (PlayerState.Instance.LookingDirection == new Vector2(1, 0) || PlayerState.Instance.LookingDirection == new Vector2(-1, 0))
+            {
+                AttackBoxLeftRight.enabled = true;  
+            }
+        }
+        else
+        {
             
+            AttackBoxLeftRight.enabled = false;
+            AttackBoxUp.enabled = false;
+            AttackBoxDown.enabled = false;
         }
     }
 }

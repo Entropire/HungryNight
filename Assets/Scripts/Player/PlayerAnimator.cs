@@ -5,29 +5,38 @@ namespace StateMachine
     public class PlayerAnimator : MonoBehaviour
     {
         Animator animator;
+        
         private void Start()
         {
-            if (!!TryGetComponent(out animator))
-            {
-                Debug.LogError($"animator not found on {gameObject.name}!");
-            }
+            animator = GetComponent<Animator>();
         }
 
         private void Update()
         {
             ResetTriggers();
-
-            if (PlayerState.instance.IsJumping)
+            if (PlayerState.Instance.IsWalking)
+            {
+                animator.SetTrigger("IsWalking");
+            }
+            else if (PlayerState.Instance.IsJumping)
             {
                 animator.SetTrigger("IsJumping");
             }
-            if (PlayerState.instance.IsFalling)
+            else if (PlayerState.Instance.IsFalling)
             {
                 animator.SetTrigger("IsFalling");
             }
-            if (PlayerState.instance.IsHit)
+            else if (PlayerState.Instance.IsAttacking)
+            {
+                animator.SetTrigger("IsAttacking");
+            }
+            else if (PlayerState.Instance.IsHit)
             {
                 animator.SetTrigger("IsHit");
+            }
+            else
+            {
+                animator.SetTrigger("IsIdle");
             }
         }
 
@@ -36,7 +45,9 @@ namespace StateMachine
             animator.ResetTrigger("IsJumping");
             animator.ResetTrigger("IsFalling");
             animator.ResetTrigger("IsWalking");
+            animator.ResetTrigger("IsAttacking");
             animator.ResetTrigger("IsHit");
+            animator.ResetTrigger("IsIdle");
         }
     }
 }
