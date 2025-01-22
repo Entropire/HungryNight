@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 3473983131307377705}
   - component: {fileID: 2975955271307498601}
   - component: {fileID: 5548628873321779914}
+  - component: {fileID: -1594531597457740969}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -341,6 +342,22 @@ MonoBehaviour:
   AttackBoxLeftRight: {fileID: 8936262593582773990}
   AttackBoxUp: {fileID: 3577887228974907236}
   AttackBoxDown: {fileID: 211554053951759150}
+--- !u!114 &-1594531597457740969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2693520707654843494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cba9c7041c526f4ab1dc1e1fa8c274b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitAble:
+    serializedVersion: 2
+    m_Bits: 2048
+  PogoActive: 0
 --- !u!1 &3814023878743451434
 GameObject:
   m_ObjectHideFlags: 0
