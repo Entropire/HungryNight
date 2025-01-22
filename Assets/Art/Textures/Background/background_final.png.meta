@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Art/Textures/Background/background_final.png.meta
 guid: daf667d995a2b5f4db15908b144c18a7
+========
+guid: dfa34c1942b9ad04f839351e7ad068db
+>>>>>>>> Development:Assets/Art/Textures/GEO/Particles copy.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
