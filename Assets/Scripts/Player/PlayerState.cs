@@ -1,80 +1,90 @@
-using Unity.VisualScripting;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace StateMachine
+public class PlayerState : PlayerInput
 {
-    public class PlayerState : PlayerInput
+    public static PlayerState Instance;
+
+    [SerializeField] private Transform GroundCheckPos;
+    [SerializeField] private float GroundCheckRadius = .2f;
+    [SerializeField] private float AttackCooldown = 1f;
+    [SerializeField] private float AttackDuration = 2f;
+    
+    [NonSerialized] public Vector2 LookingDirection = Vector2.zero;
+    [NonSerialized] public bool IsWalking;
+    [NonSerialized] public Vector3 LastGroundedLocation;
+    [NonSerialized] public bool IsJumping, IsFalling;
+    [NonSerialized] public bool IsHit;
+    [NonSerialized] public bool IsAttacking; 
+    
+    private bool AttackingOnCooldown;
+
+    
+    private void Awake()
     {
-        #region FieldAndPropertyHandling
-
-        [SerializeField] float AttackCooldown, AttackDuration, Timer;
-        public static PlayerState instance;
-
-        public void SetAttackCooldown(float NewCooldown)
+        if (Instance == null)
         {
-            if (AttackCooldown < AttackDuration)
-            {
-                Debug.LogError("Please don't set the AttackWindow higher than the AttackCooldown - Nothing changed with this call");
-            }
-            else
-            {
-                AttackCooldown = NewCooldown;
-            }
+            Instance = this;
         }
+        
+        AttackingKeyPressed += Instance.Attacked;
+        WalkingKeyPressed += (Bool) => Instance.IsWalking = Bool;
+        JumpingKeyPressed += Instance.Jump;
+        LookingDirectionUpdated += (Vector2) => Instance.LookingDirection = Vector2;
+    }
 
-        public void SetAttackHitWindow(float HitWindow)
-        {
-            if (AttackCooldown < AttackDuration)
-            {
-                Debug.LogError("Please don't set the AttackWindow higher than the AttackCooldown - Nothing changed with this call");
-            }
-            else
-            {
-                AttackDuration = HitWindow;
-            }
-        }
-
-        public void SetLookingDirection(Vector2 NewLookingDirection)
-        {
-            if (LookingDirection == Vector2.up || LookingDirection == Vector2.down || LookingDirection == Vector2.left || LookingDirection == Vector2.right)
-            {
-                LookingDirection = NewLookingDirection;
-            }
-            else
-            {
-                Debug.LogError("Invalid looking direction in " + this);
-            }
-        }
-        void Start()
-        {
-            if (instance == null)
-                instance = this;
-
-            Attack += Attacked;
-        }
-
-        #endregion
-
-        public new Vector2 LookingDirection { get; private set; } = new Vector2(1, 0);
-        public bool IsJumping, IsFalling;
-        public new bool IsWalking;
-        public bool IsHit;
-        public bool IsAttacking = false, AttackingOnCooldown = false;
-
-        void Attacked()
+    private void Attacked()
+    {
+        if (!IsAttacking && !AttackingOnCooldown)
         {
             IsAttacking = true;
             AttackingOnCooldown = true;
+            StartCoroutine(AttackCooldownTimer());
         }
+    }
 
-        private void Update()
+    private void Jump(bool keyPressed)
+    {
+        if (keyPressed)
         {
-            if (IsAttacking || AttackingOnCooldown)
+            if (GetGroundState())
             {
-                Timer += Time.deltaTime;
-                if (Timer > AttackDuration) IsAttacking = false;
-                else if (Timer > AttackCooldown) AttackingOnCooldown = false; Timer = 0;
+                IsJumping = true;
             }
         }
+        else
+        {
+            IsJumping = false;
+        }
+    }
+
+    private bool GetGroundState()
+    {
+        return Physics2D.OverlapCircle(GroundCheckPos.position, GroundCheckRadius, LayerMask.GetMask("Ground"));
+    }
+    
+    private IEnumerator AttackCooldownTimer()
+    {
+        yield return new WaitForSeconds(AttackDuration);
+        IsAttacking = false;
+        yield return new WaitForSeconds(AttackCooldown);
+        AttackingOnCooldown = false;
+    }
+
+    private void FixedUpdate()
+    {
+        if (GetGroundState())
+        {
+           LastGroundedLocation = transform.position;
+           if (IsFalling)
+           {
+               IsFalling = false;
+           }
+        }
+        
+        
+        IsHit = false;
     }
 }
