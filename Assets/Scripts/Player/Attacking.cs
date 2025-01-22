@@ -33,4 +33,9 @@ public class Attacking : MonoBehaviour
             AttackBoxDown.enabled = false;
         }
     }
+
+    public bool OnBoxDown()
+    {
+         return AttackBoxDown.enabled;
+    }
 }

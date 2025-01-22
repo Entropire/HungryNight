@@ -4,15 +4,37 @@ using UnityEngine;
 
 public class PogoSlash : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private LayerMask HitAble;
+    private Rigidbody2D Player;
+    private bool IsDownSlash;
+    [SerializeField] private bool PogoActive;
+    private bool PogoCheck;
     void Start()
     {
-        
+        Player ??= GetComponent<Rigidbody2D>();
     }
-
-    // Update is called once per frame
-    void Update()
+    void Update() 
     {
+        IsDownSlash = GetComponent<Attacking>().OnBoxDown();
+        Debug.DrawRay(transform.position, new Vector2(0,-6));   
+        if (IsDownSlash && !PogoActive)
+        {
+            PogoActive = true;
+            Vector2 pos = new Vector2(
+            transform.position.x,
+            transform.position.y - transform.localScale.y / 2 - .1f
+            );
+            PogoCheck = Physics2D.Raycast(pos, Vector2.down, 2, HitAble);
+            
+            if (PogoCheck)
+            {
+                Debug.Log("hey");
+                Player.AddForce(new Vector2(0, 1) * 10, ForceMode2D.Impulse);
+            }
+        }else if (PogoActive && !IsDownSlash)
+        {
+            PogoActive = false;
+        }
         
     }
 }

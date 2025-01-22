@@ -303,7 +303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 23506270}
   - component: {fileID: 23506271}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (36)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 32650817}
   - component: {fileID: 32650818}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (29)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -471,7 +471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 102476155}
   - component: {fileID: 102476156}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (21)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -555,7 +555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 105276089}
   - component: {fileID: 105276090}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (7)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -639,7 +639,7 @@ GameObject:
   m_Component:
   - component: {fileID: 109451912}
   - component: {fileID: 109451913}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (23)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -713,6 +713,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &144470657 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3814023878743451434, guid: d1b078220615ec740b7ea1496d59c682, type: 3}
+  m_PrefabInstance: {fileID: 1069710507}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &144470661
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144470657}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &153654518
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,7 +755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 153654519}
   - component: {fileID: 153654520}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (32)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -807,7 +839,7 @@ GameObject:
   m_Component:
   - component: {fileID: 199398317}
   - component: {fileID: 199398318}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (11)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -891,7 +923,7 @@ GameObject:
   m_Component:
   - component: {fileID: 246806620}
   - component: {fileID: 246806621}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (28)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -975,7 +1007,7 @@ GameObject:
   m_Component:
   - component: {fileID: 293287527}
   - component: {fileID: 293287528}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (26)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -1059,7 +1091,7 @@ GameObject:
   m_Component:
   - component: {fileID: 305168650}
   - component: {fileID: 305168651}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (34)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -1143,7 +1175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 358632889}
   - component: {fileID: 358632890}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (1)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -1227,7 +1259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 369637954}
   - component: {fileID: 369637955}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Spiketrap
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -1343,7 +1375,7 @@ GameObject:
   m_Component:
   - component: {fileID: 376706517}
   - component: {fileID: 376706518}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (27)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -1427,7 +1459,7 @@ GameObject:
   m_Component:
   - component: {fileID: 394706370}
   - component: {fileID: 394706371}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (5)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -1511,7 +1543,7 @@ GameObject:
   m_Component:
   - component: {fileID: 435741606}
   - component: {fileID: 435741607}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (33)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -1595,7 +1627,7 @@ GameObject:
   m_Component:
   - component: {fileID: 504543778}
   - component: {fileID: 504543779}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (30)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -1669,6 +1701,56 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &536749588 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 316131982282407920, guid: c5bc52bbda6d25b4a9c7bb40a04ba4c1, type: 3}
+  m_PrefabInstance: {fileID: 8873959188814533336}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &536749592
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536749588}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.011410475, y: 0.035215378}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.4404507, y: 4.4}
+    newSize: {x: 4.7206182, y: 5.4666667}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.9510036, y: 7.301078}
+  m_EdgeRadius: 0
 --- !u!1 &560119199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1781,7 +1863,7 @@ GameObject:
   m_Component:
   - component: {fileID: 571312686}
   - component: {fileID: 571312687}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (12)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -1865,7 +1947,7 @@ GameObject:
   m_Component:
   - component: {fileID: 608517530}
   - component: {fileID: 608517531}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (16)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -1949,7 +2031,7 @@ GameObject:
   m_Component:
   - component: {fileID: 625179607}
   - component: {fileID: 625179608}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (25)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -2033,7 +2115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 679396995}
   - component: {fileID: 679396996}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (31)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -2107,6 +2189,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &736543150 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1414617205289255786, guid: d1b078220615ec740b7ea1496d59c682, type: 3}
+  m_PrefabInstance: {fileID: 1069710507}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &736543154
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736543150}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &809473823
 GameObject:
   m_ObjectHideFlags: 0
@@ -2182,6 +2296,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809473823}
   m_CullTransparentMesh: 1
+--- !u!1 &812366204 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6629543774218008373, guid: d1b078220615ec740b7ea1496d59c682, type: 3}
+  m_PrefabInstance: {fileID: 1069710507}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &812366208
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812366204}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &840480551
 GameObject:
   m_ObjectHideFlags: 0
@@ -2192,7 +2338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 840480552}
   - component: {fileID: 840480553}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (22)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -2368,7 +2514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 925537834}
   - component: {fileID: 925537835}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (2)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -2452,7 +2598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 972474331}
   - component: {fileID: 972474332}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (4)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -2605,6 +2751,18 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2693520707654843494, guid: d1b078220615ec740b7ea1496d59c682, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1069710509}
+    - targetCorrespondingSourceObject: {fileID: 2693520707654843494, guid: d1b078220615ec740b7ea1496d59c682, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1069710519}
+    - targetCorrespondingSourceObject: {fileID: 3814023878743451434, guid: d1b078220615ec740b7ea1496d59c682, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 144470661}
+    - targetCorrespondingSourceObject: {fileID: 1414617205289255786, guid: d1b078220615ec740b7ea1496d59c682, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 736543154}
+    - targetCorrespondingSourceObject: {fileID: 6629543774218008373, guid: d1b078220615ec740b7ea1496d59c682, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 812366208}
   m_SourcePrefab: {fileID: 100100000, guid: d1b078220615ec740b7ea1496d59c682, type: 3}
 --- !u!1 &1069710508 stripped
 GameObject:
@@ -2634,6 +2792,22 @@ MonoBehaviour:
   Hittime: 0.03
   timeelepsed: 0
   hitCooldowntime: 1
+--- !u!114 &1069710519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069710508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cba9c7041c526f4ab1dc1e1fa8c274b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitAble:
+    serializedVersion: 2
+    m_Bits: 2048
+  PogoCheck: 0
 --- !u!1 &1170335417
 GameObject:
   m_ObjectHideFlags: 0
@@ -2645,7 +2819,7 @@ GameObject:
   - component: {fileID: 1170335418}
   - component: {fileID: 1170335419}
   - component: {fileID: 1170335420}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2774,7 +2948,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1193933198}
   - component: {fileID: 1193933199}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (19)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -2858,7 +3032,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1221905600}
   - component: {fileID: 1221905601}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (8)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -2945,7 +3119,7 @@ GameObject:
   - component: {fileID: 1237183819}
   - component: {fileID: 1237183818}
   - component: {fileID: 1237183817}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Triangle
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -3123,7 +3297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1240693029}
   - component: {fileID: 1240693030}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (38)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -3207,7 +3381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1285820188}
   - component: {fileID: 1285820189}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (35)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -3291,7 +3465,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1313252625}
   - component: {fileID: 1313252626}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (10)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -3375,7 +3549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1368806195}
   - component: {fileID: 1368806196}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (20)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -3564,7 +3738,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1500842125}
   - component: {fileID: 1500842126}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (3)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -3716,7 +3890,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1608352544}
   - component: {fileID: 1608352545}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (37)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -3800,7 +3974,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1655076342}
   - component: {fileID: 1655076343}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (15)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -3884,7 +4058,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1743740057}
   - component: {fileID: 1743740058}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (14)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -3968,7 +4142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1747848952}
   - component: {fileID: 1747848953}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (13)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -4052,7 +4226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1783307710}
   - component: {fileID: 1783307711}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (24)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -4136,7 +4310,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1821635589}
   - component: {fileID: 1821635590}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (6)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -4220,7 +4394,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1894120722}
   - component: {fileID: 1894120723}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (9)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -4304,7 +4478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1909298962}
   - component: {fileID: 1909298963}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (18)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -4518,7 +4692,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2135822355}
   - component: {fileID: 2135822356}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Triangle (17)
   m_TagString: Spike
   m_Icon: {fileID: 0}
@@ -4604,6 +4778,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IMG_4107_1
       objectReference: {fileID: 0}
+    - target: {fileID: 316131982282407920, guid: c5bc52bbda6d25b4a9c7bb40a04ba4c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2660316921911771698, guid: c5bc52bbda6d25b4a9c7bb40a04ba4c1, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.18728489
@@ -4659,7 +4837,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 316131982282407920, guid: c5bc52bbda6d25b4a9c7bb40a04ba4c1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 536749592}
   m_SourcePrefab: {fileID: 100100000, guid: c5bc52bbda6d25b4a9c7bb40a04ba4c1, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

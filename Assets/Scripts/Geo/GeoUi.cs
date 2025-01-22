@@ -20,10 +20,7 @@ public class GeoUi : MonoBehaviour
 
     private void Start()
     {
-        if (OnGeoUpdateComplete == null)
-        {
-            OnGeoUpdateComplete = new UnityEvent();
-        }
+            OnGeoUpdateComplete ??= new UnityEvent();
     }
 
     private void Update()

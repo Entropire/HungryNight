@@ -9,7 +9,7 @@ public class PlayerState : PlayerInput
 
     [SerializeField] private Transform GroundCheckPos;
     [SerializeField] private float GroundCheckRadius = .2f;
-    [SerializeField] private float AttackCooldown = 1f;
+    [SerializeField] private float AttackCooldown = 0.3f;
     [SerializeField] private float AttackDuration = 2f;
     
     [NonSerialized] public Vector2 LookingDirection = Vector2.zero;
