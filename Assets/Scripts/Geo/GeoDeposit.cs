@@ -39,6 +39,7 @@ public class GeoDeposit : MonoBehaviour
                 {
                     DepositList.Add(Instantiate(Food[Random.Range(0, 3)], transform.position, Quaternion.identity));
                 }
+                Destroy(this);
             }
         }
 
