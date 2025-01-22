@@ -50,7 +50,7 @@ public class HitPushback : MonoBehaviour
             }
             if (timeelepsed > 0.7)
             {
-                // playMovement.enabled = true;
+                playMovement.enabled = true;
             }
             if (timeelepsed > hitCooldowntime)
             {
@@ -97,7 +97,5 @@ public class HitPushback : MonoBehaviour
             ishitCooldown = true;
             playMovement.enabled = false;
         }
-    }
-
-    
+    }    
 }
