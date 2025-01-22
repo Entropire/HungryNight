@@ -1,0 +1,708 @@
+fileFormatVersion: 2
+guid: 4f569b2d2a06ae3438488e181d597ad5
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_0
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 1440
+        width: 348
+        height: 617
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 736dfe1147f14f54b9bc95c06434dbdf
+      internalID: -183836850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_1
+      rect:
+        serializedVersion: 2
+        x: 2561
+        y: 2049
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e96415177de8a774b85f72afc69ee919
+      internalID: 402147826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_2
+      rect:
+        serializedVersion: 2
+        x: 3043
+        y: 1414
+        width: 366
+        height: 679
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ecaec8627c0080449a562b1e4bf4db7
+      internalID: -1529116189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_3
+      rect:
+        serializedVersion: 2
+        x: 3499
+        y: 289
+        width: 144
+        height: 1781
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 586271371cce8e34393f32ebda598d74
+      internalID: -598807590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_4
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 1944
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f81586376abfda9468041db406ca5e49
+      internalID: 1936866587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_5
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 1566
+        width: 594
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf8112537d68dc479641316b8d21e01
+      internalID: -129228769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_6
+      rect:
+        serializedVersion: 2
+        x: 1673
+        y: 1453
+        width: 493
+        height: 596
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 529493d7af82ece43ae1a9d21e18dbfb
+      internalID: 754247469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_7
+      rect:
+        serializedVersion: 2
+        x: 2565
+        y: 1414
+        width: 362
+        height: 615
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6faee853c3cd3df47a3ae82b90e255eb
+      internalID: 1833168976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_8
+      rect:
+        serializedVersion: 2
+        x: 2916
+        y: 1798
+        width: 24
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 941703c98d7f355408de51bedb76a7e7
+      internalID: -1630718648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_9
+      rect:
+        serializedVersion: 2
+        x: 2938
+        y: 1826
+        width: 101
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29baed49abdaa864eac5989fe27cc74f
+      internalID: -1939272440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_10
+      rect:
+        serializedVersion: 2
+        x: 2985
+        y: 1778
+        width: 92
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1edeec5b90a29e42b2b3d8d07068a2f
+      internalID: -1636948264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_11
+      rect:
+        serializedVersion: 2
+        x: 3398
+        y: 1464
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d37057f8fc00c9846afa390660b978e7
+      internalID: 211557022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_12
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 694
+        width: 403
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f462ae60c747e614b9f90bb3ac7e8812
+      internalID: -1389279230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_13
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 694
+        width: 416
+        height: 585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c94479b437278ed429526cce75cd4378
+      internalID: 377448922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_14
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 726
+        width: 206
+        height: 555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99a51d5977e6b774c894d0bb704e485f
+      internalID: 1217524809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_15
+      rect:
+        serializedVersion: 2
+        x: 1851
+        y: 1069
+        width: 97
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69e0cd04d5f5e564fb287d9e24c58aa7
+      internalID: 78524346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_16
+      rect:
+        serializedVersion: 2
+        x: 2183
+        y: 1080
+        width: 95
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffed43a9ccfbcd041806e36c2ecf7626
+      internalID: -798972184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_17
+      rect:
+        serializedVersion: 2
+        x: 2501
+        y: 681
+        width: 163
+        height: 527
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18263e27e3e2b3c4ab80ea206c386eec
+      internalID: 1141010575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_18
+      rect:
+        serializedVersion: 2
+        x: 1813
+        y: 896
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ce3037bc4194d49aa923fccf5d204e
+      internalID: -10964753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_19
+      rect:
+        serializedVersion: 2
+        x: 1849
+        y: 791
+        width: 105
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89ec5edabbbd1aa429637a05fd8fcfdf
+      internalID: 1652714222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_20
+      rect:
+        serializedVersion: 2
+        x: 2147
+        y: 746
+        width: 165
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b141fce50f550884c9919d818aed5df8
+      internalID: -78596261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_21
+      rect:
+        serializedVersion: 2
+        x: 2814
+        y: 724
+        width: 480
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7bf0b250319c9545beecbd7f690c03d
+      internalID: 374426309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_22
+      rect:
+        serializedVersion: 2
+        x: 2269
+        y: 679
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 690c7f37342fb6c44b9aa09a51dadbc9
+      internalID: -1671345092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_23
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 313
+        width: 1412
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d127170e750db1d489a308b3759d22de
+      internalID: -1196286815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_24
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 124
+        width: 219
+        height: 431
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93296086ad0d2d74984038d759a40834
+      internalID: -894995225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_25
+      rect:
+        serializedVersion: 2
+        x: 2124
+        y: 124
+        width: 306
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5388c209bb29b2c4791b7eaba2a5dab6
+      internalID: 1463078971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LISAJONKER_ARTSHEETETENPLANTEN_copy_26
+      rect:
+        serializedVersion: 2
+        x: 2726
+        y: 182
+        width: 598
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8903339b3900a4840b25bb20ff059439
+      internalID: -1125378068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_0: -183836850
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_1: 402147826
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_10: -1636948264
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_11: 211557022
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_12: -1389279230
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_13: 377448922
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_14: 1217524809
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_15: 78524346
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_16: -798972184
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_17: 1141010575
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_18: -10964753
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_19: 1652714222
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_2: -1529116189
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_20: -78596261
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_21: 374426309
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_22: -1671345092
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_23: -1196286815
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_24: -894995225
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_25: 1463078971
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_26: -1125378068
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_3: -598807590
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_4: 1936866587
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_5: -129228769
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_6: 754247469
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_7: 1833168976
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_8: -1630718648
+      LISAJONKER_ARTSHEETETENPLANTEN_copy_9: -1939272440
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

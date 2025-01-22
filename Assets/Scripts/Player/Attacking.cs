@@ -12,11 +12,11 @@ public class Attacking : MonoBehaviour
         
         if (PlayerState.Instance.IsAttacking)
         {
-            if (PlayerState.Instance.LookingDirection == new Vector2(0, -1))
+            if (PlayerState.Instance.LookingDirection == new Vector2(0, 1))
             {
                 AttackBoxUp.enabled = true;
             }
-            if (PlayerState.Instance.LookingDirection == new Vector2(0, 1))
+            if (PlayerState.Instance.LookingDirection == new Vector2(0, -1))
             {
                 AttackBoxDown.enabled = true;   
             }
