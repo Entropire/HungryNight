@@ -25,7 +25,7 @@ public class SpikeFall : MonoBehaviour
             transform.position.y - transform.localScale.y / 2 - .1f
         );
 
-        // playerTrigger = Physics2D.BoxCast(pos, new Vector2(1, transform.localScale.y), 0, Vector2.down, 3, layermaskPlayer);
+       
         if (Physics2D.BoxCast(pos, new Vector2(1, transform.localScale.y), 0, Vector2.down, 5, layermaskPlayer) && !playerTrigger)
         {
             playerTrigger = true;

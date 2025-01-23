@@ -88,11 +88,11 @@ public class HitPushback : MonoBehaviour
                 {
                     rb.AddForce(new Vector2(4, YhitCords), ForceMode2D.Impulse);
                 }
-            else 
-            {
-                rb.AddForce(new Vector2(-4, YhitCords), ForceMode2D.Impulse);
-            }
-            Time.timeScale = 0.1f;
+                else 
+                {
+                    rb.AddForce(new Vector2(-4, YhitCords), ForceMode2D.Impulse);
+                }
+                Time.timeScale = 0.1f;
             }
             ishitCooldown = true;
             playMovement.enabled = false;

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.XR;
 using UnityEngine;
 
 public class PlayerState : PlayerInput
@@ -18,12 +20,15 @@ public class PlayerState : PlayerInput
     [NonSerialized] public bool IsJumping, IsFalling;
     [NonSerialized] public bool IsHit;
     [NonSerialized] public bool IsAttacking; 
-    
+    // [NonSerialized] public bool IsGrounded;
+    private RaycastHit2D GroundHit;
+    private Collider2D coll;
     private bool AttackingOnCooldown;
 
     
     private void Awake()
     {
+        // KeyReleased = true; 
         if (Instance == null)
         {
             Instance = this;
@@ -34,6 +39,8 @@ public class PlayerState : PlayerInput
         JumpingKeyPressed += Instance.Jump;
         LookingDirectionUpdated += (Vector2) => Instance.LookingDirection = Vector2;
     }
+
+    
 
     private void Attacked()
     {
@@ -51,6 +58,7 @@ public class PlayerState : PlayerInput
         {
             if (GetGroundState())
             {
+                // IsGrounded = false;
                 IsJumping = true;
             }
         }
@@ -72,15 +80,17 @@ public class PlayerState : PlayerInput
         yield return new WaitForSeconds(AttackCooldown);
         AttackingOnCooldown = false;
     }
+    
 
     private void FixedUpdate()
     {
         if (GetGroundState())
         {
            LastGroundedLocation = transform.position;
+           
            if (IsFalling)
            {
-               IsFalling = false;
+                IsFalling = false;
            }
         }
         
