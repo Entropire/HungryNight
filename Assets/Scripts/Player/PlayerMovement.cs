@@ -7,14 +7,12 @@ public class PlayerMovement : PlayerState
     
     [SerializeField] private float MaxSpeed;
     [SerializeField] private float JumpForce = 2;
-    [SerializeField] private float JumpTime = 0.5f;
     private bool JumpWasPressedThisFrame;
-    private float jumpTimeCounter;
     public bool IsGrounded;
+    private bool BeginJump;
     private RaycastHit2D GroundHit;
     private Collider2D coll;
-    // c[SerializeField] private float MaxJumpHeight = 8f;
-    // private float MaxJumpHeightPos;
+    private float JumpPercentage;
 
 
     void Start()
@@ -29,8 +27,12 @@ public class PlayerMovement : PlayerState
         Jumping();
         Rotate();
         if (IsGroundedState())
-        {
+        {   
             IsGrounded = true;
+        }
+        else
+        {
+            IsGrounded = false;
         }
     }
     private bool IsGroundedState()
@@ -73,52 +75,56 @@ public class PlayerMovement : PlayerState
 
     private void Jumping()
     {
-        
-        
+        JumpPercentage = (transform.position.y/Instance.MaxJumpHeightPos) * 100;
         if (Instance.IsJumping)
         {
+            
             if (!JumpWasPressedThisFrame)
             {
                 IsJumping = true;
-                jumpTimeCounter = JumpTime;
+                BeginJump = true;
                 Rb.velocity = new Vector2(Rb.velocity.x, JumpForce);
                 JumpWasPressedThisFrame = true;
             }
             
-            if (jumpTimeCounter > 0 && IsJumping)
+            if (JumpPercentage < 90 && BeginJump)
             {
                 Rb.velocity = new Vector2(Rb.velocity.x, JumpForce);
-                jumpTimeCounter -= Time.deltaTime;
             }
-            else if (jumpTimeCounter == 0)
+            else if (JumpPercentage >= 90 && JumpPercentage < 98 && BeginJump)
             {
-                IsJumping = false;
-                IsFalling = true;
+                float reducedJumpForce = Mathf.Lerp(JumpForce, 0, (JumpPercentage - 90) / 10f);
+                Rb.velocity = new Vector2(Rb.velocity.x, reducedJumpForce);
             }
+            else if (JumpPercentage >= 98 && BeginJump)
+            {
+                Rb.velocity = new Vector2(Rb.velocity.x, 0);
+                IsJumping = false; 
+                BeginJump = false; 
+                IsFalling = true;  
+            }      
             else
             {
                 IsJumping = false;
             }
-        }
-        else
-        {
-            IsJumping = false;
         }
 
         if (Rb.velocity.y < 0)
         {
             if (Input.GetKeyUp(KeyCode.Space))
             {
+                BeginJump = false;
                 JumpWasPressedThisFrame = false;
             }
             Instance.IsFalling = true;
         }
-        if (IsGrounded)
-        {       
-            if (Input.GetKeyUp(KeyCode.Space))
-            {
-                JumpWasPressedThisFrame = false;
-            }
+          
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            BeginJump = false;
+            Rb.velocity = new Vector2(Rb.velocity.x, 1f);
+            JumpWasPressedThisFrame = false;
         }
+
     }   
 }   

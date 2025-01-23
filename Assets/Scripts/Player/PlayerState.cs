@@ -20,10 +20,13 @@ public class PlayerState : PlayerInput
     [NonSerialized] public bool IsJumping, IsFalling;
     [NonSerialized] public bool IsHit;
     [NonSerialized] public bool IsAttacking; 
+    [NonSerialized] public float MaxJumpHeightPos;
     // [NonSerialized] public bool IsGrounded;
     private RaycastHit2D GroundHit;
     private Collider2D coll;
     private bool AttackingOnCooldown;
+    
+    private float JumpHeight = 6f;
 
     
     private void Awake()
@@ -58,7 +61,6 @@ public class PlayerState : PlayerInput
         {
             if (GetGroundState())
             {
-                // IsGrounded = false;
                 IsJumping = true;
             }
         }
@@ -87,7 +89,7 @@ public class PlayerState : PlayerInput
         if (GetGroundState())
         {
            LastGroundedLocation = transform.position;
-           
+           MaxJumpHeightPos = Instance.LastGroundedLocation.y + JumpHeight;
            if (IsFalling)
            {
                 IsFalling = false;

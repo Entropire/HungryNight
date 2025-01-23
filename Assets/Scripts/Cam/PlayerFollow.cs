@@ -14,7 +14,7 @@ public class PlayerFollow : MonoBehaviour
     void Update () 
     {   
         targetPosition = player.transform.position + new Vector3(0, 1, -5);
-        if(player.transform.position.y < 0)
+        if(player.transform.position.y < 5.7)
         {
             transform.position = player.transform.position + new Vector3(0, 3, -5);
         } else
