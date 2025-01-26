@@ -8,7 +8,7 @@ public class PlayerState : PlayerInput
     [SerializeField] private float AttackCooldown = 0.3f;
     [SerializeField] private float AttackDuration = 2f;
     
-    protected Vector2 LookingDirection = Vector2.zero;
+    public Vector2 LookingDirection = Vector2.zero;
     public bool IsWalking;
     protected Vector3 LastGroundedLocation;
     public bool IsJumping, IsFalling;

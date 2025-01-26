@@ -57,6 +57,12 @@ public class PlayerMovement : PlayerState
             Rb.velocity = new Vector2(0, Rb.velocity.y);
         }
     }
+    
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        IsJumping = false;
+        BeginJump = false;
+    }
 
     private void Rotate()
     {
