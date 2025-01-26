@@ -9,10 +9,14 @@ public class GeoDeposit : MonoBehaviour
     [SerializeField] Sprite BrokenRockSprite;
     [SerializeField] List<GameObject> DepositList;
     [SerializeField] GameObject[] Food;
+    [SerializeField] AudioSource HitSound;
+    private AudioSource Deposit;
     private bool StartUpdate;
 
     private void Start()
     {
+        Deposit = GetComponent<AudioSource>();
+
         ChildSprite = gameObject.GetComponentInChildren<SpriteRenderer>();
 
         AttackCollider.OnPlayerAttacked += GoRock;
@@ -29,6 +33,8 @@ public class GeoDeposit : MonoBehaviour
                 DepositList.Add(Instantiate(Food[Random.Range(0, 3)], transform.position, Quaternion.identity));
             }
 
+            Deposit.Play();
+            HitSound.Play();
 
             if (Health == 0)
             {

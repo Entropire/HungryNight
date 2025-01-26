@@ -15,7 +15,6 @@ public class HitPushback : MonoBehaviour
     private PlayerMovement playMovement;
     [SerializeField] private Image Blackfade;
     [SerializeField] private List<Vector3> LastPos;
-    [SerializeField] private LayerMask Spiketrap;
     [SerializeField] private Color BaseColor;
     [SerializeField] private Color ToColor;
     [SerializeField] private float Hittime = 0.03f;
