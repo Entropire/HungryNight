@@ -11,13 +11,11 @@ public class PlayerMovement : PlayerState
     public bool IsGrounded;
     private bool BeginJump;
     private RaycastHit2D GroundHit;
-    private Collider2D coll;
     private float JumpPercentage;
 
 
     void Start()
     {
-        coll ??= GetComponent<Collider2D>();
         Rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
@@ -37,7 +35,7 @@ public class PlayerMovement : PlayerState
     }
     private bool IsGroundedState()
     {
-        GroundHit = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, 0.25f, LayerMask.GetMask("Ground"));
+        GroundHit = Physics2D.BoxCast(transform.position, transform.localScale, 0f, Vector2.down, 0.25f, LayerMask.GetMask("Ground"));
         if (GroundHit.collider != null)
         {
             return true;
