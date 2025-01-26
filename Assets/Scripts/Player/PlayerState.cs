@@ -9,15 +9,12 @@ public class PlayerState : PlayerInput
     [SerializeField] private float AttackDuration = 2f;
     
     protected Vector2 LookingDirection = Vector2.zero;
-    protected bool IsWalking;
+    public bool IsWalking;
     protected Vector3 LastGroundedLocation;
-    protected bool IsJumping, IsFalling;
-    protected bool IsHit;
-    protected bool IsAttacking; 
+    public bool IsJumping, IsFalling;
+    public bool IsHit;
+    public bool IsAttacking; 
     protected float MaxJumpHeightPos;
-    // [NonSerialized] public bool IsGrounded;
-    private RaycastHit2D GroundHit;
-    private Collider2D coll;
     private bool AttackingOnCooldown;
     
     private float JumpHeight = 6f;
