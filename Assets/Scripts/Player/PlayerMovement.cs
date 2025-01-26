@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerMovement : PlayerState
 {
     private Rigidbody2D Rb;
-    
+
     [SerializeField] private float MaxSpeed;
     [SerializeField] private float JumpForce = 2;
     private bool JumpWasPressedThisFrame;
@@ -35,7 +35,7 @@ public class PlayerMovement : PlayerState
     }
     private bool IsGroundedState()
     {
-        GroundHit = Physics2D.BoxCast(transform.position, transform.localScale, 0f, Vector2.down, 0.25f, LayerMask.GetMask("Ground"));
+        GroundHit = Physics2D.BoxCast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2), new Vector2(0.1f, transform.localScale.x), 0f, Vector2.down, 0.25f, LayerMask.GetMask("Ground"));
         if (GroundHit.collider != null)
         {
             return true;
@@ -48,9 +48,9 @@ public class PlayerMovement : PlayerState
 
     private void Moving()
     {
-        if (Instance.IsWalking)
+        if (IsWalking)
         {
-            Rb.velocity = new Vector2(Instance.LookingDirection.x * MaxSpeed, Rb.velocity.y);
+            Rb.velocity = new Vector2(LookingDirection.x * MaxSpeed, Rb.velocity.y);
         }
         else
         {
@@ -60,12 +60,12 @@ public class PlayerMovement : PlayerState
 
     private void Rotate()
     {
-        if (Instance.LookingDirection == Vector2.left)
+        if (LookingDirection == Vector2.left)
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
 
-        if (Instance.LookingDirection == Vector2.right)
+        if (LookingDirection == Vector2.right)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
@@ -73,8 +73,8 @@ public class PlayerMovement : PlayerState
 
     private void Jumping()
     {
-        JumpPercentage = (transform.position.y/Instance.MaxJumpHeightPos) * 100;
-        if (Instance.IsJumping)
+        JumpPercentage = (transform.position.y/MaxJumpHeightPos) * 100;
+        if (IsJumping)
         {
             
             if (!JumpWasPressedThisFrame)
@@ -114,7 +114,7 @@ public class PlayerMovement : PlayerState
                 BeginJump = false;
                 JumpWasPressedThisFrame = false;
             }
-            Instance.IsFalling = true;
+            IsFalling = true;
         }
           
         if (Input.GetKeyUp(KeyCode.Space))
