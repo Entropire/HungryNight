@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: spritesheet health_0
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 913
+        width: 346
+        height: 442
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc4fba804d68ae149852d6f9c2626f8f
+      internalID: -1133014719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet health_1
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 916
+        width: 345
+        height: 441
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 727cd39aaa4bff143b4b8a76bf313d89
+      internalID: -1993272531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet health_2
+      rect:
+        serializedVersion: 2
+        x: 1313
+        y: 901
+        width: 345
+        height: 441
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c1918b93443964aadeac06fbea5760
+      internalID: 1192694886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet health_3
+      rect:
+        serializedVersion: 2
+        x: 1873
+        y: 910
+        width: 345
+        height: 441
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a44c604ceda9274eb2590b3752f9be2
+      internalID: -1608986360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet health_4
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 280
+        width: 345
+        height: 441
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73560b1ae2853af42acae277bbe2d749
+      internalID: 206988316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet health_5
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 268
+        width: 345
+        height: 441
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a99c46fa2de44b7468c802b2d8811e4e
+      internalID: 492996675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet health_6
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 268
+        width: 345
+        height: 441
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b789a35e057ab254e8a76e9e5774b976
+      internalID: 1637315004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +253,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spritesheet health_0: -1133014719
+      spritesheet health_1: -1993272531
+      spritesheet health_2: 1192694886
+      spritesheet health_3: -1608986360
+      spritesheet health_4: 206988316
+      spritesheet health_5: 492996675
+      spritesheet health_6: 1637315004
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
