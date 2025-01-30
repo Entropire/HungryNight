@@ -17,15 +17,15 @@ namespace StateMachine
         private void Update()
         {
             ResetTriggers();
-            if (playerState.IsWalking)
+            if (playerState.IsWalking && !playerState.IsJumping)
             {
                 animator.SetTrigger("IsWalking");
             }
-            else if (playerState.IsJumping)
+            else if (playerState.IsJumping && !playerState.IsFalling)
             {
                 animator.SetTrigger("IsJumping");
             }
-            else if (playerState.IsFalling)
+            else if (playerState.IsFalling  && !playerState.IsJumping)
             {
                 animator.SetTrigger("IsFalling");
             }
