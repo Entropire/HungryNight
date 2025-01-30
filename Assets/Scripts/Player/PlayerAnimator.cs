@@ -2,35 +2,38 @@
 
 namespace StateMachine
 {
+    [RequireComponent(typeof(PlayerState))]
     public class PlayerAnimator : MonoBehaviour
     {
         Animator animator;
-        
+        PlayerState playerState;
+
         private void Start()
         {
             animator = GetComponent<Animator>();
+            playerState = GetComponent<PlayerState>();
         }
 
         private void Update()
         {
             ResetTriggers();
-            if (PlayerState.Instance.IsWalking)
+            if (playerState.IsWalking && !playerState.IsJumping)
             {
                 animator.SetTrigger("IsWalking");
             }
-            else if (PlayerState.Instance.IsJumping)
+            else if (playerState.IsJumping && !playerState.IsFalling)
             {
                 animator.SetTrigger("IsJumping");
             }
-            else if (PlayerState.Instance.IsFalling)
+            else if (playerState.IsFalling  && !playerState.IsJumping)
             {
                 animator.SetTrigger("IsFalling");
             }
-            else if (PlayerState.Instance.IsAttacking)
+            else if (playerState.IsAttacking)
             {
                 animator.SetTrigger("IsAttacking");
             }
-            else if (PlayerState.Instance.IsHit)
+            else if (playerState.IsHit)
             {
                 animator.SetTrigger("IsHit");
             }

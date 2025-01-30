@@ -5,22 +5,27 @@ public class Attacking : MonoBehaviour
     [SerializeField] Collider2D AttackBoxLeftRight;
     [SerializeField] Collider2D AttackBoxUp;
     [SerializeField] Collider2D AttackBoxDown;
-
+    PlayerState playerState;
+    
+    void Start()
+    {
+        playerState = GetComponent<PlayerState>();
+    }
     void Update()
     {
 
         
-        if (PlayerState.Instance.IsAttacking)
+        if (playerState.IsAttacking)
         {
-            if (PlayerState.Instance.LookingDirection == new Vector2(0, 1))
+            if (playerState.LookingDirection == new Vector2(0, 1))
             {
                 AttackBoxUp.enabled = true;
             }
-            if (PlayerState.Instance.LookingDirection == new Vector2(0, -1))
+            if (playerState.LookingDirection == new Vector2(0, -1))
             {
                 AttackBoxDown.enabled = true;   
             }
-            if (PlayerState.Instance.LookingDirection == new Vector2(1, 0) || PlayerState.Instance.LookingDirection == new Vector2(-1, 0))
+            if (playerState.LookingDirection == new Vector2(1, 0) || playerState.LookingDirection == new Vector2(-1, 0))
             {
                 AttackBoxLeftRight.enabled = true;  
             }
@@ -32,5 +37,10 @@ public class Attacking : MonoBehaviour
             AttackBoxUp.enabled = false;
             AttackBoxDown.enabled = false;
         }
+    }
+
+    public bool OnBoxDown()
+    {
+         return AttackBoxDown.enabled;
     }
 }

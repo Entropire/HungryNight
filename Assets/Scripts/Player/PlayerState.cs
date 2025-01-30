@@ -1,39 +1,34 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
 public class PlayerState : PlayerInput
 {
-    public static PlayerState Instance;
-
     [SerializeField] private Transform GroundCheckPos;
     [SerializeField] private float GroundCheckRadius = .2f;
-    [SerializeField] private float AttackCooldown = 1f;
+    [SerializeField] private float AttackCooldown = 0.3f;
     [SerializeField] private float AttackDuration = 2f;
     
-    [NonSerialized] public Vector2 LookingDirection = Vector2.zero;
-    [NonSerialized] public bool IsWalking;
-    [NonSerialized] public Vector3 LastGroundedLocation;
-    [NonSerialized] public bool IsJumping, IsFalling;
-    [NonSerialized] public bool IsHit;
-    [NonSerialized] public bool IsAttacking; 
-    
+    public Vector2 LookingDirection = Vector2.zero;
+    public bool IsWalking;
+    protected Vector3 LastGroundedLocation;
+    public bool IsJumping, IsFalling;
+    public bool IsHit;
+    public bool IsAttacking; 
+    protected float MaxJumpHeightPos;
     private bool AttackingOnCooldown;
+    
+    private float JumpHeight = 6f;
 
     
     private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        
-        AttackingKeyPressed += Instance.Attacked;
-        WalkingKeyPressed += (Bool) => Instance.IsWalking = Bool;
-        JumpingKeyPressed += Instance.Jump;
-        LookingDirectionUpdated += (Vector2) => Instance.LookingDirection = Vector2;
+    {  
+        AttackingKeyPressed += Attacked;
+        WalkingKeyPressed += (Bool) => IsWalking = Bool;
+        JumpingKeyPressed += Jump;
+        LookingDirectionUpdated += (Vector2) => LookingDirection = Vector2;
     }
+
+    
 
     private void Attacked()
     {
@@ -72,19 +67,19 @@ public class PlayerState : PlayerInput
         yield return new WaitForSeconds(AttackCooldown);
         AttackingOnCooldown = false;
     }
+    
 
     private void FixedUpdate()
     {
         if (GetGroundState())
         {
            LastGroundedLocation = transform.position;
+           MaxJumpHeightPos = LastGroundedLocation.y + JumpHeight;
            if (IsFalling)
            {
-               IsFalling = false;
+                IsFalling = false;
            }
-        }
-        
-        
+        } 
         IsHit = false;
     }
 }

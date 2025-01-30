@@ -1,10 +1,6 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Assertions.Must;
 
 public class HitPushback : MonoBehaviour
 {
@@ -15,7 +11,6 @@ public class HitPushback : MonoBehaviour
     private PlayerMovement playMovement;
     [SerializeField] private Image Blackfade;
     [SerializeField] private List<Vector3> LastPos;
-    [SerializeField] private LayerMask Spiketrap;
     [SerializeField] private Color BaseColor;
     [SerializeField] private Color ToColor;
     [SerializeField] private float Hittime = 0.03f;
@@ -50,7 +45,7 @@ public class HitPushback : MonoBehaviour
             }
             if (timeelepsed > 0.7)
             {
-                // playMovement.enabled = true;
+                playMovement.enabled = true;
             }
             if (timeelepsed > hitCooldowntime)
             {
@@ -88,16 +83,14 @@ public class HitPushback : MonoBehaviour
                 {
                     rb.AddForce(new Vector2(4, YhitCords), ForceMode2D.Impulse);
                 }
-            else 
-            {
-                rb.AddForce(new Vector2(-4, YhitCords), ForceMode2D.Impulse);
-            }
-            Time.timeScale = 0.1f;
+                else 
+                {
+                    rb.AddForce(new Vector2(-4, YhitCords), ForceMode2D.Impulse);
+                }
+                Time.timeScale = 0.1f;
             }
             ishitCooldown = true;
             playMovement.enabled = false;
         }
-    }
-
-    
+    }    
 }

@@ -5,66 +5,91 @@ using UnityEngine;
 public class SoundInput : MonoBehaviour
 {
     [SerializeField] List<AudioClip> PlayerSounds;
-    [SerializeField] private bool LastGroundedCheck;
     private AudioSource player;
+    private PlayerState playerState;
+    private bool hasPlayed = false;
+    private bool lastGroundedCheck = true;
+
     void Start()
     {
-       player = GetComponent<AudioSource>();
+        player = GetComponent<AudioSource>();
+        playerState = GetComponent<PlayerState>();
     }
 
     void Update()
     {
-        if (LastGroundedCheck)
+        UpdatePlayerSound();
+    }
+
+    public void UpdatePlayerSound()
+    {
+        if (lastGroundedCheck && !player.isPlaying)
         {
-            player.clip = PlayerSounds[3];
+            hasPlayed = false;
+        }
+
+        if (playerState.IsWalking && !playerState.IsJumping && !playerState.IsFalling)
+        {
+            PlaySound(0, true);
+            player.volume = 1;
+        }
+        else if (playerState.IsJumping)
+        {
+            lastGroundedCheck = false;
+            PlaySoundOnce(1);
+            player.volume = 0.3f;
+        }
+        else if (playerState.IsFalling && !playerState.IsJumping )
+        {
+            PlaySoundOnce(2);
+            player.volume = 0.3f;
+        }
+        else if (playerState.IsAttacking)
+        {
+            PlaySound(4, false);
+            player.volume = 1;
+        }
+        else
+        {
+            StopSound();
+        }
+
+        if (!playerState.IsJumping && !playerState.IsFalling)
+        {
+            lastGroundedCheck = true;
+        }
+    }
+
+    private void PlaySound(int soundIndex, bool loop)
+    {
+        hasPlayed = false;
+        player.clip = PlayerSounds[soundIndex];
+        player.loop = loop;
+        if (!player.isPlaying)
+        {
+            player.Play();
+        }
+    }
+
+    private void PlaySoundOnce(int soundIndex)
+    {
+        if (!hasPlayed)
+        {
+            player.clip = PlayerSounds[soundIndex];
             player.loop = false;
-            if (player.clip == PlayerSounds[3] && !player.isPlaying)
+            if (!player.isPlaying)
             {
+                hasPlayed = true;
                 player.Play();
             }
         }
-        if (PlayerState.Instance.IsWalking)
-        {
-            player.clip = PlayerSounds[0];
-            player.loop = true;
-            if (player.clip == PlayerSounds[0] && !player.isPlaying)
-            {
-                player.Play();
-            }
-        }else if (PlayerState.Instance.IsJumping)
-        {
-            LastGroundedCheck = false;
-            player.clip = PlayerSounds[1];
-            player.loop = false;
-            if (player.clip == PlayerSounds[1] && !player.isPlaying)
-            {
-                player.Play();
-            }
-        }else if (PlayerState.Instance.IsFalling)
-        {
-            player.clip = PlayerSounds[2];
-            player.loop = false;
-            if (player.clip == PlayerSounds[2] && !player.isPlaying)
-            {
-                player.Play();
-            }
-        }else if (PlayerState.Instance.IsAttacking)
-        {
-            player.clip = PlayerSounds[4];
-            player.loop = false;
-            if (player.clip == PlayerSounds[4] && !player.isPlaying)
-            {
-                player.Play();
-            }
-        } else 
+    }
+
+    private void StopSound()
+    {
+        if (player.isPlaying)
         {
             player.Stop();
         }
-        
-        if (!PlayerState.Instance.IsJumping && !PlayerState.Instance.IsFalling)
-        {
-            LastGroundedCheck = true;
-        }
-        
     }
 }

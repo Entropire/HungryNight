@@ -1,14 +1,17 @@
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D)), RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : PlayerState
 {
     private Rigidbody2D Rb;
-    
+
     [SerializeField] private float MaxSpeed;
     [SerializeField] private float JumpForce = 2;
-    [SerializeField] private float MaxJumpHeight = 3f;
-    private float MaxJumpHeightPos;
+    private bool JumpWasPressedThisFrame;
+    public bool IsGrounded;
+    private bool BeginJump;
+    private RaycastHit2D GroundHit;
+    private float JumpPercentage;
 
 
     void Start()
@@ -21,28 +24,54 @@ public class PlayerMovement : PlayerState
         Moving();
         Jumping();
         Rotate();
+        if (IsGroundedState())
+        {   
+            IsGrounded = true;
+        }
+        else
+        {
+            IsGrounded = false;
+        }
+    }
+    private bool IsGroundedState()
+    {
+        GroundHit = Physics2D.BoxCast(new Vector2(transform.position.x, transform.position.y - transform.localScale.y / 2), new Vector2(0.1f, transform.localScale.x), 0f, Vector2.down, 0.25f, LayerMask.GetMask("Ground"));
+        if (GroundHit.collider != null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     private void Moving()
     {
-        if (Instance.IsWalking)
+        if (IsWalking)
         {
-            Rb.velocity = new Vector2(Instance.LookingDirection.x * MaxSpeed, Rb.velocity.y);
+            Rb.velocity = new Vector2(LookingDirection.x * MaxSpeed, Rb.velocity.y);
         }
         else
         {
             Rb.velocity = new Vector2(0, Rb.velocity.y);
         }
     }
+    
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        IsJumping = false;
+        BeginJump = false;
+    }
 
     private void Rotate()
     {
-        if (Instance.LookingDirection == Vector2.left)
+        if (LookingDirection == Vector2.left)
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
 
-        if (Instance.LookingDirection == Vector2.right)
+        if (LookingDirection == Vector2.right)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
@@ -50,28 +79,56 @@ public class PlayerMovement : PlayerState
 
     private void Jumping()
     {
-        MaxJumpHeightPos = Instance.LastGroundedLocation.y + MaxJumpHeight;
-        
-        if (Instance.IsJumping && transform.position.y < MaxJumpHeightPos)
+        JumpPercentage = (transform.position.y/MaxJumpHeightPos) * 100;
+        if (IsJumping)
         {
-            Rb.velocity = new Vector2(Rb.velocity.x, JumpForce * Mathf.Clamp01(1 - transform.position.y / MaxJumpHeight));
             
-            float forceMultiplier =  Mathf.Clamp01(1 - transform.position.y / MaxJumpHeight);
-            
-            if (forceMultiplier > 0)
+            if (!JumpWasPressedThisFrame)
             {
-                Vector3 upwardForce = Vector3.up * (JumpForce * forceMultiplier);
-                Rb.AddForce(upwardForce);
+                IsJumping = true;
+                BeginJump = true;
+                Rb.velocity = new Vector2(Rb.velocity.x, JumpForce);
+                JumpWasPressedThisFrame = true;
             }
-        }
-        else
-        {
-            IsJumping = false;
+            
+            if (JumpPercentage < 90 && BeginJump)
+            {
+                Rb.velocity = new Vector2(Rb.velocity.x, JumpForce);
+            }
+            else if (JumpPercentage >= 90 && JumpPercentage < 98 && BeginJump)
+            {
+                float reducedJumpForce = Mathf.Lerp(JumpForce, 0, (JumpPercentage - 90) / 10f);
+                Rb.velocity = new Vector2(Rb.velocity.x, reducedJumpForce);
+            }
+            else if (JumpPercentage >= 98 && BeginJump)
+            {
+                Rb.velocity = new Vector2(Rb.velocity.x, 0);
+                IsJumping = false; 
+                BeginJump = false; 
+                IsFalling = true;  
+            }      
+            else
+            {
+                IsJumping = false;
+            }
         }
 
         if (Rb.velocity.y < 0)
         {
-            Instance.IsFalling = true;
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                BeginJump = false;
+                JumpWasPressedThisFrame = false;
+            }
+            IsFalling = true;
         }
+          
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            BeginJump = false;
+            Rb.velocity = new Vector2(Rb.velocity.x, 1f);
+            JumpWasPressedThisFrame = false;
+        }
+
     }   
 }   

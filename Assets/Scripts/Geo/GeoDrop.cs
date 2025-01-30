@@ -7,9 +7,11 @@ public class GeoDrop : MonoBehaviour
     Rigidbody2D body;
     [SerializeField] private GeoUi geoUi;
     [SerializeField] GameObject GeoObject;
+    private AudioSource GeoSound;
 
     private void Start()
     {
+        GeoSound = GetComponent<AudioSource>();
         GeoObject = FindObjectOfType<GeoUi>().gameObject;
         geoUi = GeoObject.GetComponent<GeoUi>();
         body = GetComponent<Rigidbody2D>();
@@ -18,12 +20,13 @@ public class GeoDrop : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D other) 
+    private void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            GeoSound.Play();
             geoUi.AddGeo(1);
-            Destroy(gameObject);
+            Destroy(gameObject, 0.1f);
         }
     }
 }
