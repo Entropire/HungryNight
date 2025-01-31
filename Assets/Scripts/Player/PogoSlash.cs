@@ -9,13 +9,27 @@ public class PogoSlash : MonoBehaviour
     private Rigidbody2D Player; // Reference to the player's Rigidbody2D component
     private bool IsDownSlash; // Tracks if the player is performing a down slash
 
-    [Header("Pogo Check")] 
+    [Header("Audio")]
+
+    [SerializeField] private AudioSource HitPogo; 
     private bool PogoActive; // Tracks if pogo move is active
     private bool PogoCheck; // Checks if pogo move is possible
 
     void Start()
     {
         Player ??= GetComponent<Rigidbody2D>(); // Assigns Rigidbody2D component if not already assigned
+    }
+
+    public bool CheckPogo() // bool to check if the player is pogoing
+    {
+        if (PogoActive && PogoCheck)
+        {
+            return true;
+        } 
+        else
+        {
+            return false;
+        }
     }
 
     void Update() 
