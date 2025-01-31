@@ -31,7 +31,7 @@ public class GeoDeposit : MonoBehaviour
             {
                 DepositList.Add(Instantiate(Food[Random.Range(0, 3)], transform.position, Quaternion.identity));
             }
-
+            CameraShake.Shake(1f, 0.1f);
             Deposit.Play();
             HitSound.Play();
 

@@ -28,8 +28,7 @@ public class PogoSlash : MonoBehaviour
             
             if (PogoCheck)
             {
-                Debug.Log("hey");
-                Player.AddForce(new Vector2(0, 1) * 10, ForceMode2D.Impulse);
+                Player.velocity = new Vector2(0, 10);
             }
         }else if (PogoActive && !IsDownSlash)
         {

@@ -67,12 +67,12 @@ public class HitPushback : MonoBehaviour
             {
                 if(direction.y > 0 && other.GetComponent<SpikeFall>() == null)
                 {
-                    YhitCords = 16;
+                    YhitCords = 32;
                     ToColor = Color.black;
                     isntFallSpike = true;
                 }else
                 {
-                    YhitCords = 9;
+                    YhitCords = 18;
                     ToColor = BaseColor;
                     isntFallSpike = false;
                 }

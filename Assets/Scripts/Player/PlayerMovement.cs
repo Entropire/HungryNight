@@ -102,7 +102,7 @@ public class PlayerMovement : PlayerState
             }
             else if (JumpPercentage >= 98 && BeginJump)
             {
-                Rb.velocity = new Vector2(Rb.velocity.x, 0);
+                // Rb.velocity = new Vector2(Rb.velocity.x, 0);
                 IsJumping = false; 
                 BeginJump = false; 
                 IsFalling = true;  
