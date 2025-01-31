@@ -4,71 +4,73 @@ using UnityEngine.Events;
 
 public class GeoUi : MonoBehaviour
 {
-    [SerializeField] TMP_Text GeoAmount;
-    [SerializeField] TMP_Text GeoAdded;
-    [SerializeField] Color EventualColor;
-    [SerializeField] private float DelayBeforeAdding = 2.5f;
-    [SerializeField] private float AddDuration = 0.3f;
+    [Header("Geo Text")] 
+    [SerializeField] TMP_Text GeoAmount; // UI text to display the total geo amount
+    [SerializeField] TMP_Text GeoAdded; // UI text to display the added geo amount
 
-    private AudioSource GeoDeplition;
+    [Header("Geo Depletion Time")] 
+    [SerializeField] Color EventualColor; // Color to change geo text after update
+    [SerializeField] private float DelayBeforeAdding = 2.5f; // Delay before geo starts adding
+    [SerializeField] private float AddDuration = 0.3f; // Duration over which geo is added
 
-    private int TotalAmount = 0;
-    private int AddedAmount = 0;
+    private AudioSource GeoDeplition; // Audio source for geo depletion sound
 
-    private float CountdownTimer = 0f;
-    private float AddProgressTimer = 0f;
+    private int TotalAmount = 0; // Tracks total geo amount
+    private int AddedAmount = 0; // Tracks the amount of geo to be added
 
-    public UnityEvent OnGeoUpdateComplete;
+    private float CountdownTimer = 0f; // Timer before adding geo starts
+    private float AddProgressTimer = 0f; // Timer for tracking geo addition progress
+
 
     private void Start()
     {
-        GeoDeplition = GetComponent<AudioSource>();
-        OnGeoUpdateComplete ??= new UnityEvent();
+        GeoDeplition = GetComponent<AudioSource>(); // Gets the AudioSource component
     }
 
     private void Update()
     {
         if (CountdownTimer > 0)
         {
-            GeoDeplition.Stop();
-            CountdownTimer -= Time.deltaTime;
+            GeoDeplition.Stop(); // Stops audio while waiting
+            CountdownTimer -= Time.deltaTime; // Decrease countdown timer
         }
         else if (AddedAmount > 0 && AddProgressTimer < AddDuration)
         {    
-            AddProgressTimer += Time.deltaTime;
-            float progress = Mathf.Clamp01(AddProgressTimer / AddDuration);
+            AddProgressTimer += Time.deltaTime; // Increase progress timer
+            float progress = Mathf.Clamp01(AddProgressTimer / AddDuration); // Calculate progress ratio
+            
             if (!GeoDeplition.isPlaying)
             {
-                GeoDeplition.Play();
+                GeoDeplition.Play(); // Play audio when adding geo
             }
-            int amountToAdd = Mathf.RoundToInt(progress * AddedAmount);
-            GeoAmount.text = (TotalAmount + amountToAdd).ToString();
-            GeoAdded.text = "+" + (AddedAmount - amountToAdd).ToString();
-
+            
+            int amountToAdd = Mathf.RoundToInt(progress * AddedAmount); // Calculate the amount to add based on progress
+            GeoAmount.text = (TotalAmount + amountToAdd).ToString(); // Update geo amount display
+            GeoAdded.text = "+" + (AddedAmount - amountToAdd).ToString(); // Update added geo text
+            
             if (progress >= 1f)
             {
-                FinalizeGeoCount();
+                FinalizeGeoCount(); // Finalize geo count when addition is complete
             }
         }
     }
 
     public void AddGeo(int amount)
     {
-        GeoAdded.color = Color.white;
-        AddedAmount += amount;
-        GeoAdded.text = "+" + AddedAmount.ToString();
-        CountdownTimer = DelayBeforeAdding;
-        AddProgressTimer = 0f;
+        GeoAdded.color = Color.white; // Reset added geo text color
+        AddedAmount += amount; // Add amount to pending geo addition
+        GeoAdded.text = "+" + AddedAmount.ToString(); // Update added geo text
+        CountdownTimer = DelayBeforeAdding; // Set countdown timer before addition starts
+        AddProgressTimer = 0f; // Reset progress timer
     }
 
     private void FinalizeGeoCount()
     {
-        GeoDeplition.Stop();
-        TotalAmount += AddedAmount;
-        AddedAmount = 0;
-        GeoAdded.text = "0";
-        GeoAdded.color = EventualColor;
-        OnGeoUpdateComplete.Invoke();
+        GeoDeplition.Stop(); // Stop audio when geo addition is complete
+        TotalAmount += AddedAmount; // Update total geo amount
+        AddedAmount = 0; // Reset added amount
+        GeoAdded.text = "0"; // Reset added geo text
+        GeoAdded.color = EventualColor; // Change geo text color to final color
     }
 }
 
